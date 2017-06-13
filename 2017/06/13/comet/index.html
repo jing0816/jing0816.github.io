@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="不忘初心，方得始终。">
+<meta name="description" content="我们在做项目中经常会使用Ajax来异步请求服务器的数据，但是某些特定场景，比如在线聊天的新消息推送，Ajax已无法满足我们的业务需要，于是一种基于http长连接的“服务器推”技术便发明出来，这种技术便是comet。">
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="comit">
-<meta property="og:url" content="https://github.com/jing0816/jing0816.github.io.git/2017/06/13/comit/index.html">
+<meta property="og:title" content="comet浅析">
+<meta property="og:url" content="https://github.com/jing0816/jing0816.github.io.git/2017/06/13/comet/index.html">
 <meta property="og:site_name" content="前端日常">
-<meta property="og:description" content="不忘初心，方得始终。">
-<meta property="og:updated_time" content="2017-06-13T09:11:20.000Z">
+<meta property="og:description" content="我们在做项目中经常会使用Ajax来异步请求服务器的数据，但是某些特定场景，比如在线聊天的新消息推送，Ajax已无法满足我们的业务需要，于是一种基于http长连接的“服务器推”技术便发明出来，这种技术便是comet。">
+<meta property="og:updated_time" content="2017-06-13T15:44:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="comit">
-<meta name="twitter:description" content="不忘初心，方得始终。">
+<meta name="twitter:title" content="comet浅析">
+<meta name="twitter:description" content="我们在做项目中经常会使用Ajax来异步请求服务器的数据，但是某些特定场景，比如在线聊天的新消息推送，Ajax已无法满足我们的业务需要，于是一种基于http长连接的“服务器推”技术便发明出来，这种技术便是comet。">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/jing0816/jing0816.github.io.git/2017/06/13/comit/"/>
+  <link rel="canonical" href="https://github.com/jing0816/jing0816.github.io.git/2017/06/13/comet/"/>
 
 
 
 
 
-  <title>comit | 前端日常</title>
+  <title>comet浅析 | 前端日常</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +264,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/jing0816/jing0816.github.io.git/2017/06/13/comit/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/jing0816/jing0816.github.io.git/2017/06/13/comet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jing">
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">comit</h1>
+          <h1 class="post-title" itemprop="name headline">comet浅析</h1>
         
 
         <div class="post-meta">
@@ -293,7 +293,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-13T15:25:57+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-13T22:41:44+08:00">
                 2017-06-13
               </time>
             
@@ -350,7 +350,16 @@
       
 
       
-        
+        <p>我们在做项目中经常会使用<code>Ajax</code>来异步请求服务器的数据，但是某些特定场景，比如在线聊天的新消息推送，<code>Ajax</code>已无法满足我们的业务需要，于是一种基于http长连接的“服务器推”技术便发明出来，这种技术便是<code>comet</code>。<br><a id="more"></a></p>
+<p><code>comet</code>与<code>Ajax</code>相比，<code>Ajax</code>是从页面向服务器请求数据，而<code>comet</code>是由服务器向页面推送数据。</p>
+<p>有两种实现<code>comet</code>的方式：<strong>长轮询</strong>和<strong>流</strong>。</p>
+<blockquote>
+<p>下面介绍一下4种<code>Web</code>实时交互方式   </p>
+<blockquote>
+<p>轮询 ：客户端定时发送请求，服务器端接收到客户端请求，马上进行响应，并关闭连接。<br>长轮询 ：客户端发送请求，服务器端接收到客户端请求后进行阻塞，并保持连接；当服务器端有数据需要响应时，使用保持住的连接进行响应，并关闭连接。<br>长连接 ：客户端发送请求，服务器端接收到客户端请求后进行阻塞，并保持连接；当服务器端有数据需要响应时，使用保持住的连接进行响应，并保持住连接。<br>推送 ：客户端与服务器端建立连接后，服务器端可以直接将数据推送给客户端。</p>
+</blockquote>
+</blockquote>
+
       
     </div>
 
