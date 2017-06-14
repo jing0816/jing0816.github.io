@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Javascript," />
+  <meta name="keywords" content="Javascript,web开发," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="我们在做项目中经常会使用Ajax来异步请求服务器的数据，但是某些特定场景，比如在线聊天的新消息推送，Ajax已无法满足我们的业务需要，于是一种基于http长连接的“服务器推”技术便发明出来，这种技术便是comet。">
-<meta name="keywords" content="Javascript">
+<meta name="description" content="我们在做项目中经常会使用Ajax来异步请求服务器的数据，但是某些特定场景，比如即时消息推送，Ajax已无法满足我们的业务需要，于是一种基于http长连接的“服务器推”技术便发明出来，这种技术便是comet。">
+<meta name="keywords" content="Javascript,web开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="comet浅析">
 <meta property="og:url" content="https://github.com/jing0816/jing0816.github.io.git/2017/06/13/comet/index.html">
 <meta property="og:site_name" content="前端日常">
-<meta property="og:description" content="我们在做项目中经常会使用Ajax来异步请求服务器的数据，但是某些特定场景，比如在线聊天的新消息推送，Ajax已无法满足我们的业务需要，于是一种基于http长连接的“服务器推”技术便发明出来，这种技术便是comet。">
-<meta property="og:updated_time" content="2017-06-13T15:44:11.000Z">
+<meta property="og:description" content="我们在做项目中经常会使用Ajax来异步请求服务器的数据，但是某些特定场景，比如即时消息推送，Ajax已无法满足我们的业务需要，于是一种基于http长连接的“服务器推”技术便发明出来，这种技术便是comet。">
+<meta property="og:updated_time" content="2017-06-14T11:47:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="comet浅析">
-<meta name="twitter:description" content="我们在做项目中经常会使用Ajax来异步请求服务器的数据，但是某些特定场景，比如在线聊天的新消息推送，Ajax已无法满足我们的业务需要，于是一种基于http长连接的“服务器推”技术便发明出来，这种技术便是comet。">
+<meta name="twitter:description" content="我们在做项目中经常会使用Ajax来异步请求服务器的数据，但是某些特定场景，比如即时消息推送，Ajax已无法满足我们的业务需要，于是一种基于http长连接的“服务器推”技术便发明出来，这种技术便是comet。">
 
 
 
@@ -350,15 +350,26 @@
       
 
       
-        <p>我们在做项目中经常会使用<code>Ajax</code>来异步请求服务器的数据，但是某些特定场景，比如在线聊天的新消息推送，<code>Ajax</code>已无法满足我们的业务需要，于是一种基于http长连接的“服务器推”技术便发明出来，这种技术便是<code>comet</code>。<br><a id="more"></a></p>
+        <p>我们在做项目中经常会使用<code>Ajax</code>来异步请求服务器的数据，但是某些特定场景，比如即时消息推送，<code>Ajax</code>已无法满足我们的业务需要，于是一种基于http长连接的“服务器推”技术便发明出来，这种技术便是<code>comet</code>。<br><a id="more"></a></p>
 <p><code>comet</code>与<code>Ajax</code>相比，<code>Ajax</code>是从页面向服务器请求数据，而<code>comet</code>是由服务器向页面推送数据。</p>
 <p>有两种实现<code>comet</code>的方式：<strong>长轮询</strong>和<strong>流</strong>。</p>
 <blockquote>
 <p>下面介绍一下4种<code>Web</code>实时交互方式   </p>
-<blockquote>
-<p>轮询 ：客户端定时发送请求，服务器端接收到客户端请求，马上进行响应，并关闭连接。<br>长轮询 ：客户端发送请求，服务器端接收到客户端请求后进行阻塞，并保持连接；当服务器端有数据需要响应时，使用保持住的连接进行响应，并关闭连接。<br>长连接 ：客户端发送请求，服务器端接收到客户端请求后进行阻塞，并保持连接；当服务器端有数据需要响应时，使用保持住的连接进行响应，并保持住连接。<br>推送 ：客户端与服务器端建立连接后，服务器端可以直接将数据推送给客户端。</p>
+<ul>
+<li>轮询 ：客户端定时发送请求，服务器端接收到客户端请求，马上进行响应，并关闭连接。</li>
+<li>长轮询 ：客户端发送请求，服务器端接收到客户端请求后进行阻塞，并保持连接；当服务器端有数据需要响应时，使用保持住的连接进行响应，并关闭连接。  </li>
+<li>长连接 ：客户端发送请求，服务器端接收到客户端请求后进行阻塞，并保持连接；当服务器端有数据需要响应时，使用保持住的连接进行响应，并保持住连接。   </li>
+<li>推送 ：客户端与服务器端建立连接后，服务器端可以直接将数据推送给客户端。</li>
+</ul>
 </blockquote>
-</blockquote>
+<h4 id="基于-AJAX-的长轮询（long-polling）方式"><a href="#基于-AJAX-的长轮询（long-polling）方式" class="headerlink" title="基于 AJAX 的长轮询（long-polling）方式"></a>基于 AJAX 的长轮询（long-polling）方式</h4><p>使用<code>Ajax</code>实现“服务器推”与传统的<code>Ajax</code>并不相同，服务器端会阻塞请求直到有数据传递或超时才返回，当客户端<code>JavaScript</code>响应处理函数会在处理完服务器返回的信息后，会再次发出请求，并重新建立连接，这样会保证消息的即时推送。</p>
+<h4 id="基于-Iframe-及-htmlfile-的流（streaming）方式"><a href="#基于-Iframe-及-htmlfile-的流（streaming）方式" class="headerlink" title="基于 Iframe 及 htmlfile 的流（streaming）方式"></a>基于 Iframe 及 htmlfile 的流（streaming）方式</h4><p>通过在<code>HTML</code>页面里嵌入一个<code>iframe</code>，然后将这个<code>iframe</code>的<code>src</code>属性设为一个长连接，服务器端就能源源不断地往客户端输入数据。</p>
+<p>这个方式的实现原理是长连接所请求的服务端会调取客户端的<code>JavaScript</code>方法，服务器端将返回的数据作为客户端<code>JavaScript</code>函数的参数传递。</p>
+<p>使用 iframe 请求一个长连接有一个很明显的不足之处：IE、Morzilla Firefox 下端的进度栏都会显示加载没有完成，而且 IE 上方的图标会不停的转动，表示加载正在进行；刷新当前页面反应也是会很慢。</p>
+<p>解决IE的进度栏显示加载没有完成，可以使用一个称为<code>htmlfile</code>的 ActiveX，是Google 的天才们使用的方法，该控件也被用到gmail+gtalk 产品中。</p>
+<p>稍后我们会介绍另一种服务器推技术<code>websocket</code>。</p>
+<hr>
+<p>By：jinjj</p>
 
       
     </div>
@@ -389,6 +400,8 @@
         <div class="post-tags">
           
             <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+          
+            <a href="/tags/web开发/" rel="tag"># web开发</a>
           
         </div>
       
@@ -456,8 +469,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -494,7 +516,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -519,6 +541,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于-AJAX-的长轮询（long-polling）方式"><span class="nav-number">1.</span> <span class="nav-text">基于 AJAX 的长轮询（long-polling）方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于-Iframe-及-htmlfile-的流（streaming）方式"><span class="nav-number">2.</span> <span class="nav-text">基于 Iframe 及 htmlfile 的流（streaming）方式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
