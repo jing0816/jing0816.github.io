@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Javascript,web开发," />
 
 
 
@@ -90,16 +90,23 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="description" content="话不多说，上图 图一：js获取cookie 关键词：document.cookie">
+<meta name="keywords" content="Javascript,web开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://github.com/jing0816/jing0816.github.io.git/2017/06/12/hello-world/index.html">
+<meta property="og:title" content="cookie(一)：图解cookie">
+<meta property="og:url" content="https://github.com/jing0816/jing0816.github.io.git/2017/06/15/cookie1/index.html">
 <meta property="og:site_name" content="前端日常">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:updated_time" content="2017-06-13T07:53:56.000Z">
+<meta property="og:description" content="话不多说，上图 图一：js获取cookie 关键词：document.cookie">
+<meta property="og:image" content="https://github.com/images/cookie/1.jpg">
+<meta property="og:image" content="https://github.com/images/cookie/2.jpg">
+<meta property="og:image" content="https://github.com/images/cookie/5.jpg">
+<meta property="og:image" content="https://github.com/images/cookie/6.jpg">
+<meta property="og:image" content="https://github.com/images/cookie/7.jpg">
+<meta property="og:updated_time" content="2017-06-15T10:27:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="cookie(一)：图解cookie">
+<meta name="twitter:description" content="话不多说，上图 图一：js获取cookie 关键词：document.cookie">
+<meta name="twitter:image" content="https://github.com/images/cookie/1.jpg">
 
 
 
@@ -127,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/jing0816/jing0816.github.io.git/2017/06/12/hello-world/"/>
+  <link rel="canonical" href="https://github.com/jing0816/jing0816.github.io.git/2017/06/15/cookie1/"/>
 
 
 
 
 
-  <title>Hello World | 前端日常</title>
+  <title>cookie(一)：图解cookie | 前端日常</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/jing0816/jing0816.github.io.git/2017/06/12/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/jing0816/jing0816.github.io.git/2017/06/15/cookie1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jing">
@@ -280,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">cookie(一)：图解cookie</h1>
         
 
         <div class="post-meta">
@@ -292,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-12T21:58:09+08:00">
-                2017-06-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T10:23:17+08:00">
+                2017-06-15
               </time>
             
 
@@ -302,6 +309,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -327,16 +356,74 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>话不多说，上图</p>
+<h3 id="图一：js获取cookie"><a href="#图一：js获取cookie" class="headerlink" title="图一：js获取cookie"></a>图一：js获取cookie</h3><p><img src="/images/cookie/1.jpg" width="600"></p>
+<p>关键词：<em>document.cookie</em><br><a id="more"></a></p>
+<ul>
+<li>js通过document.cookie这个代码来读取cookie</li>
+<li>由n个<code>key=value;</code>形式的键值对组成的一个字符串</li>
+<li><code>document.cookie</code>并不能获取cookie的 domain，path，expires 或 secure 标记</li>
+</ul>
+<h3 id="图二：cookie的属性选项"><a href="#图二：cookie的属性选项" class="headerlink" title="图二：cookie的属性选项"></a>图二：cookie的属性选项</h3><p><img src="/images/cookie/2.jpg" width="600"></p>
+<p>关键词：<em>cookie的属性选项</em></p>
+<ul>
+<li>cookie 的属性选项 <code>expires</code>、<code>domain</code>、<code>path</code>、<code>secure</code>、<code>HttpOnly</code></li>
+</ul>
+<p>来，排好队，一个一个介绍</p>
+<p>先来段code：</p>
+<pre><code>document.cookie=&quot;user_name=EmmieHuang; expires=Thu, 25 Feb 201604:18:00 GMT; domain=liepini.com; path=/; secure; HttpOnly“;
+</code></pre><h4 id="expires"><a href="#expires" class="headerlink" title="expires"></a>expires</h4><ul>
+<li>含义：cookie失效日期（如此例指该user_name会在Thu, 25 Feb 2016 04:18:00之后失效，即会被浏览器自动删除）</li>
+<li>格式：GMT 格式（可以通过 new Date().toGMTString()或者 new Date().toUTCString() 来获得）</li>
+<li>不设置：也称session cookie，即有效期为session，浏览器关闭后就没有了</li>
+</ul>
+<p><em>据此，可将cookie分为会话cookie<code>(Session cookie)</code>和持久性<code>cookie</code>(Persistent cookie)</em></p>
+<h4 id="domain-和-path："><a href="#domain-和-path：" class="headerlink" title="domain 和 path："></a>domain 和 path：</h4><ul>
+<li>含义：domain和path一起来限制 cookie 能被哪些 URL 访问</li>
+<li>不设置： domain的默认值为设置该cookie的网页所在的域名，path默认值为设置该cookie的网页所在的目录</li>
+</ul>
+<h4 id="secure"><a href="#secure" class="headerlink" title="secure"></a>secure</h4><ul>
+<li><p>含义：指定后，cookie只有在使用SSL链接的时候才发送到服务器。如，cookie信息只能发送到<a href="https://www.liepin.com，而http://www.liepin.com的请求则不能发送cookie。" target="_blank" rel="external">https://www.liepin.com，而http://www.liepin.com的请求则不能发送cookie。</a></p>
+</li>
+<li><p>不设置：默认为空，即不管是HTTPS协议还是HTTP协议的请求，cookie 都会被发送至服务端（domain和path都符合条件的情况下）</p>
+</li>
+</ul>
+<h4 id="HttpOnly"><a href="#HttpOnly" class="headerlink" title="HttpOnly"></a>HttpOnly</h4><p><img src="/images/cookie/5.jpg" width="600"></p>
+<p>这个不太常用啊，但是还是要了解一下的，看到了吗</p>
+<ul>
+<li><p>含义：当cookie带httpOnly选项时，客户端则无法通过js代码去访问（包括读取、修改、删除等）这个cookie</p>
+</li>
+<li><p>不设置：默认是不设置这个值的，</p>
+</li>
+</ul>
+<p><em>在客户端是不能通过js代码去设置一个httpOnly类型的cookie的，这种类型的cookie只能通过服务端来设置</em></p>
+<h3 id="图三：js设置cookie"><a href="#图三：js设置cookie" class="headerlink" title="图三：js设置cookie"></a>图三：js设置cookie</h3><p><img src="/images/cookie/6.jpg" width="600"></p>
+<p>这是一个ajax请求的 <code>Request Headers</code>，符合条件的cookie会以这种方式发送到服务端。  </p>
+<p>关键词：<em>js设置cookie</em></p>
+<ul>
+<li><p>创建：设置多个cookie的方法就是重复执行document.cookie = “key=name”；</p>
+<p>正确</p>
+<pre><code>document.cookie = &quot;name=Jonh&quot;;
+document.cookie = &quot;age=12&quot;;
+document.cookie = &quot;class=111&quot;;
+</code></pre><p>错误</p>
+<pre><code>document.cookie = &quot;name=Jonh; age=12; class=111&quot;; 
+</code></pre><p><strong>错误的方式会导致除了第一个，后面的都不会设置成功</strong></p>
+</li>
+</ul>
+<ul>
+<li>修改：重新赋值，旧的值会被新的值覆盖。但要注意一点，<strong>在设置新cookie时，path/domain这几个选项一定要旧cookie 保持一样。</strong>否则不会修改旧值，而是添加了一个新的 cookie。</li>
+<li>删除：也是重新赋值，只要将这个新cookie的<strong>expires 选项设置为一个过去的时间点</strong>就行了。但同样要注意，path/domain/这几个选项一定要旧cookie保持一样。</li>
+</ul>
+<p><em>js并没有直接提供修改和删除cookie的方法，所以其原理都是重新赋值</em></p>
+<h3 id="图四：服务端设置cookie"><a href="#图四：服务端设置cookie" class="headerlink" title="图四：服务端设置cookie"></a>图四：服务端设置cookie</h3><p><img src="/images/cookie/7.jpg" width="600"></p>
+<p>这是一个 <code>Response Header</code></p>
+<p>关键词：<em>服务端设置cookie</em></p>
+<ul>
+<li>服务器通过发送一个称为 Set-Cookie 的 HTTP 消息头来创建一个 cookie。一个Set-cookie只能设置一个cookie。当有多个cookie的时候，要设置多个Set-cookie字段，如上图所示。</li>
+</ul>
+<hr>
+<p><em>author: Emmie Huang</em></p>
 
       
     </div>
@@ -364,6 +451,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+          
+            <a href="/tags/web开发/" rel="tag"># web开发</a>
+          
+        </div>
+      
 
       
         
@@ -373,14 +468,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/06/13/comet/" rel="next" title="comet浅析">
+                <i class="fa fa-chevron-left"></i> comet浅析
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/13/comet/" rel="prev" title="comet浅析">
-                comet浅析 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/15/cookie2/" rel="prev" title="cookie(二)：cookie扩展">
+                cookie(二)：cookie扩展 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -510,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图一：js获取cookie"><span class="nav-number">1.</span> <span class="nav-text">图一：js获取cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图二：cookie的属性选项"><span class="nav-number">2.</span> <span class="nav-text">图二：cookie的属性选项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#expires"><span class="nav-number">2.1.</span> <span class="nav-text">expires</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#domain-和-path："><span class="nav-number">2.2.</span> <span class="nav-text">domain 和 path：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#secure"><span class="nav-number">2.3.</span> <span class="nav-text">secure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HttpOnly"><span class="nav-number">2.4.</span> <span class="nav-text">HttpOnly</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图三：js设置cookie"><span class="nav-number">3.</span> <span class="nav-text">图三：js设置cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图四：服务端设置cookie"><span class="nav-number">4.</span> <span class="nav-text">图四：服务端设置cookie</span></a></li></ol></div>
             
 
           </div>
