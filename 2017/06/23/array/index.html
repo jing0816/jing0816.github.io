@@ -1,0 +1,1069 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Javascript,web开发," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Array 对象用于在单个的变量中存储多个值。">
+<meta name="keywords" content="Javascript,web开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Array数组">
+<meta property="og:url" content="https://github.com/jing0816/jing0816.github.io.git/2017/06/23/array/index.html">
+<meta property="og:site_name" content="前端日常">
+<meta property="og:description" content="Array 对象用于在单个的变量中存储多个值。">
+<meta property="og:updated_time" content="2017-06-23T07:18:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Array数组">
+<meta name="twitter:description" content="Array 对象用于在单个的变量中存储多个值。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/jing0816/jing0816.github.io.git/2017/06/23/array/"/>
+
+
+
+
+
+  <title>Array数组 | 前端日常</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">前端日常</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/jing0816/jing0816.github.io.git/2017/06/23/array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端日常">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Array数组</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T14:47:40+08:00">
+                2017-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Array 对象用于在单个的变量中存储多个值。<br><a id="more"></a></p>
+<h3 id="一、创建-Array-对象的语法"><a href="#一、创建-Array-对象的语法" class="headerlink" title="一、创建 Array 对象的语法"></a>一、创建 Array 对象的语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">new Array();</div><div class="line">new Array(size);</div><div class="line">new Array(element0, element1, ..., elementn);</div><div class="line"></div><div class="line">var arr = new Array();</div><div class="line">var arr = new Array(5);</div><div class="line">var a= new Array(&quot;b&quot;, 2, &quot;a&quot;, 4); // [&quot;b&quot;, 2, &quot;a&quot;, 4]</div></pre></td></tr></table></figure>
+<ul>
+<li><p>参数</p>
+<p>参数 size 是期望的数组元素个数。返回的数组，length 字段将被设为 size 的值。<br>参数 element …, elementn 是参数列表。当使用这些参数来调用构造函数 Array() 时，新创建的数组的元素就会被初始化为这些值。它的 length 字段也会被设置为参数的个数。</p>
+</li>
+<li><p>返回值</p>
+<p>返回新创建并被初始化了的数组。<br>如果调用构造函数 Array() 时没有使用参数，那么返回的数组为空，length 字段为 0。<br>当调用构造函数时只传递给它一个数字参数，该构造函数将返回具有指定个数、元素为 undefined 的数组。<br>当其他参数调用 Array() 时，该构造函数将用参数指定的值初始化数组。<br>当把构造函数作为函数调用，不使用 new 运算符时，它的行为与使用 new 运算符调用它时的行为完全一样。</p>
+</li>
+</ul>
+<h3 id="二、Array-对象属性"><a href="#二、Array-对象属性" class="headerlink" title="二、Array 对象属性"></a>二、Array 对象属性</h3><table><br>  <tbody><br>    <tr><br>      <td>constructor</td><br>      <td>返回对创建此对象的数组函数的引用。</td><br>    </tr><br>    <tr><br>      <td>length</td><br>      <td>设置或返回数组中元素的数目。</td><br>    </tr><br>    <tr><br>      <td> prototype</td><br>      <td> 使您有能力向对象添加属性和方法。</td><br>    </tr><br>  </tbody><br></table>
+
+<h3 id="三、Array的方法"><a href="#三、Array的方法" class="headerlink" title="三、Array的方法"></a>三、Array的方法</h3><table><br>  <tr><br>    <td>concat()</td><td>连接两个数组，返回新的数组（原数组不变）</td><br>  </tr><br>  <tr><br>    <td>join()</td><td>把数组的所有元素连接成一个字符串（原数组不变）</td><br>  </tr><br>  <tr><br>    <td> pop()</td><td>删除并返回数组的最后一个元素（原数组改变）</td><br>  </tr><br>  <tr><br>    <td> push()</td><td>向数组的末尾添加一个或更多元素，并返回新的长度。（原数组改变）</td><br>  </tr><br>  <tr><br>    <td>reverse()</td><td>颠倒数组中元素的顺序。</td><br>  </tr><br>  <tr><br>    <td> shift()</td><td>删除并返回数组的第一个元素（原数组改变）</td><br>  </tr><br>  <tr><br>    <td> slice()</td><td>从某个已有的数组返回选定的元素(原数组不变)  slice(start, end)(左毕右开)</td><br>  </tr><br>  <tr><br>    <td> sort()</td><td>对数组的元素进行排序</td><br>  </tr><br>  <tr><br>    <td> splice()</td><td>删除元素，并向数组添加新元素。splice(start,num,str)，删除元素的开始位置，删除位数，删除位置新增元素</td><br>  </tr><br>  <tr><br>    <td> toSource()</td><td>返回该对象的源代码。</td><br>  </tr><br>  <tr><br>    <td> toString()</td><td>把数组转换为字符串，并返回结果。</td><br>  </tr><br>  <tr><br>    <td> toLocaleString()</td><td>把数组转换为本地数组，并返回结果。</td><br>  </tr><br>  <tr><br>   <td> unshift()</td><td>向数组的开头添加一个或更多元素，并返回新的长度。</td><br>  </tr><br>  <tr><br>   <td> valueOf()</td><td>返回数组对象的原始值</td><br>  </tr><br></table>
+
+<hr>
+<p>ES5中新增了写数组方法，如下：</p>
+<table><br>  <tr><br>    <td> isArray() </td><td>判断是否为一个数组</td><br>  </tr><br>  <tr><br>    <td> forEach  (js v1.6)</td><td>遍历，循环 </td><br>  </tr><br>  <tr><br>    <td> map  (js v1.6)</td><td>在数组中的每一个项运行一个函数，并将所有的结果作为数组返回</td><br>  </tr><br>  <tr><br>    <td> filter  (js v1.6)</td><td>遍历数组，把符合回调函数指定规则的元素组成一个新的数组并返回</td><br>  </tr><br>  <tr><br>    <td> some  (js v1.6)</td><td>遍历数组，验证数组是否有某项元素符合回调函数指定的规则。如数组中存在符合验证规则的项，则返回true，否则返回false</td><br>  </tr><br>  <tr><br>    <td> every  (js v1.6)</td><td>遍历数组，验证数组中的每一个元素是否符合回调函数指定的规则。如数组中的每一项都符合回调函数指定的规则，则返回true，否则返回false</td><br>  </tr><br>  <tr><br>    <td> indecOf  (js v1.6)</td><td>从前往后，查询数组中指定元素的索引位置</td><br>  </tr><br>  <tr><br>    <td> lastIndexOf  (js v1.6)</td><td>从后往前，查询数组中指定元素的索引位置</td><br>  </tr><br>  <tr><br>    <td> reduce  (js v1.8)</td><td></td><br>  </tr><br>  <tr><br>    <td> reduceRight (js v1.8)</td><td></td><br>  </tr><br></table>
+
+<p>新增数组方法浏览器支持</p>
+<ul>
+<li>Opera 11+</li>
+<li>Firefox 3.6+</li>
+<li>Safari 5+</li>
+<li>Chrome 8+</li>
+<li>Internet Explorer 9+</li>
+</ul>
+<p>对于让人失望很多次的IE6-IE8浏览器，Array原型扩展可以实现以上全部功能；下面会详细介绍</p>
+<p>那些修改被调用的对象的长度或者数字属性的方法是：</p>
+<p>pop、<br>push、<br>reverse、<br>shift、<br>sort、<br>splice、<br>unshift<br>那些在任何类Array对象上起作用并且不必修改长度和数值属性的方法是：</p>
+<p>concat、<br>every、<br>filter、<br>forEach、<br>indexOf、<br>join、<br>lastIndexOf、<br>map、<br>slice、<br>some、<br>toSource、<br>toString、<br>valueOf</p>
+<ul>
+<li>不常见方法：</li>
+</ul>
+<table><br>  <tr><br>    <td> from() </td><td>该方法从数组或可迭代对象创建一个新的Array实例。</td><br>  </tr><br>  <tr><br>    <td> of()</td><td>Array.of（）方法创建一个具有可变数量的参数的新的Array实例，而不管参数的数量或类型。 </td><br>  </tr><br>  <tr><br>    <td> copyWithin()</td><td>copyWithin（）方法将数组的一部分浅层复制到同一个数组中的另一个位置，并返回它，而不修改其大小</td><br>  </tr><br>  <tr><br>    <td> entries() </td><td>entries（）方法返回一个新的Array Iterator对象，该对象包含数组中每个索引的键/值对。</td><br>  </tr><br>  <tr><br>    <td> fill()</td><td>fill（）方法将一个数组的所有元素从起始索引填充到具有静态值的结束索引。</td><br>  </tr><br>  <tr><br>    <td> find()</td><td>find（）方法返回数组中满足提供的测试功能的第一个元素的值。否则返回未定义。</td><br>  </tr><br>  <tr><br>    <td> findIndex() </td><td>findIndex（）方法返回数组中满足提供的测试功能的第一个元素的索引。否则返回-1。</td><br>  </tr><br>  <tr><br>    <td> includes()</td><td>includes（）方法确定数组是否包含某个元素，根据需要返回true或false。</td><br>  </tr><br>  <tr><br>    <td>keys()</td><td>keys（）方法返回一个新的Array Iterator，它包含数组中每个索引的键。</td><br>  </tr><br>  <tr><br>    <td>values()</td><td>values（）方法返回一个新的Array Iterator对象，该对象包含数组中每个索引的值。</td><br>  </tr><br></table>
+
+<h3 id="四、Array的方法详情"><a href="#四、Array的方法详情" class="headerlink" title="四、Array的方法详情"></a>四、Array的方法详情</h3><h4 id="一、Array的基本方法"><a href="#一、Array的基本方法" class="headerlink" title="一、Array的基本方法"></a>一、Array的基本方法</h4><h5 id="1、数组的sort排序"><a href="#1、数组的sort排序" class="headerlink" title="1、数组的sort排序"></a>1、数组的sort排序</h5><p>sort() 也可以接收一个函数用于判定元素的比较结果。该函数对两个值进行比较并且返回以下三个值之一：</p>
+<ol>
+<li>如果在排序方式中 a 小于 b，则返回 -1 (或任何负数)</li>
+<li>如果 a 和 b 被认为相等，则返回 0</li>
+<li>如果在排序方式中 a 大于 b，则返回 1 (或任意正数)</li>
+</ol>
+<ul>
+<li>sort排序、正序  （根据ASCII码排序，由小到大）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var arr = [1,3,5,8,2,6,7];</div><div class="line">arr.sort();    //[1,2,3,4,5,6,7,8]</div></pre></td></tr></table></figure>
+<ul>
+<li>sort倒序</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">arr.sort(function(a,b)&#123;</div><div class="line">   return a&lt;b</div><div class="line">&#125;)； //[8,7,6,5,4,3,2,1]</div></pre></td></tr></table></figure>
+<ul>
+<li>sort()扩展</li>
+</ul>
+<p>例如，下面的代码按数组中最后一个字符进行排序：</p>
+<p>//按照年纪大小排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var arr = [&#123;</div><div class="line">  name: &apos;小华&apos;,</div><div class="line">  age: 18</div><div class="line">&#125;, &#123;</div><div class="line">  name: &apos;小马&apos;,</div><div class="line">  age: 14</div><div class="line">&#125;, &#123;</div><div class="line">  name: &apos;小森&apos;,</div><div class="line">  age: 16</div><div class="line">&#125;, &#123;</div><div class="line">  name: &apos;小博&apos;,</div><div class="line">  age: 19</div><div class="line">&#125;];</div><div class="line">arr.sort(function(a, b) &#123;</div><div class="line">  return a.age - b.age;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>//sort实现拼接最大值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function maxNumber(arr) &#123;</div><div class="line">  if (Array.isArray(arr)) &#123;</div><div class="line">    if (arr.every(function(k) &#123;</div><div class="line">        return typeof k === &apos;number&apos;;</div><div class="line">      &#125;)) &#123;</div><div class="line">      arr.sort(function(a, b) &#123;</div><div class="line">        return (b + &apos;&apos; + a) - (a + &apos;&apos; + b);</div><div class="line">      &#125;)</div><div class="line">      var num = arr.join(&apos;&apos;);</div><div class="line">      console.log(num);</div><div class="line">    &#125; else &#123;</div><div class="line">      console.log(&apos;数组中有非number类型&apos;);</div><div class="line">    &#125;</div><div class="line">  &#125; else &#123;</div><div class="line">    console.log(&apos;不是数组&apos;);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">maxNumber([12, 334, 5, 50]);</div></pre></td></tr></table></figure>
+<h5 id="2、数组的toSource-方法"><a href="#2、数组的toSource-方法" class="headerlink" title="2、数组的toSource()方法"></a>2、数组的toSource()方法</h5><p>只有 Gecko 核心的浏览器（比如 Firefox）支持该方法，也就是说 IE、Safari、Chrome、Opera 等浏览器均不支持该方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function employee(name,job,born)</div><div class="line">&#123;</div><div class="line">this.name=name;</div><div class="line">this.job=job;</div><div class="line">this.born=born;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var bill=new employee(&quot;Bill Gates&quot;,&quot;Engineer&quot;,1985);</div><div class="line"></div><div class="line">bill.toSource();</div><div class="line">//(&#123;name:&quot;Bill Gates&quot;, job:&quot;Engineer&quot;, born:1985&#125;)；</div></pre></td></tr></table></figure>
+<h5 id="3、toString-、toLocaleString"><a href="#3、toString-、toLocaleString" class="headerlink" title="3、toString()、toLocaleString()"></a>3、toString()、toLocaleString()</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [&quot;George&quot;, &quot;John&quot;, &quot;Thomas&quot;];</div><div class="line">arr.toString();</div><div class="line">arr.toLocaleString();</div><div class="line">//&quot;George,John,Thomas&quot;</div></pre></td></tr></table></figure>
+<h5 id="4、splice"><a href="#4、splice" class="headerlink" title="4、splice()"></a>4、splice()</h5><p>删除元素，并向数组添加新元素。splice(start,num,str),删除元素的开始位置，删除位数，删除位置新增元素</p>
+<ul>
+<li>删除功能：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = [&quot;George&quot;, &quot;John&quot;, &quot;Thomas&quot;,&apos;Lily&apos;,&apos;Lucy&apos;];</div><div class="line">arr.splice(2,2);</div><div class="line">// [&quot;George&quot;, &quot;John&quot;, &quot;Lucy&quot;]</div></pre></td></tr></table></figure>
+<ul>
+<li>替换功能：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = [&quot;George&quot;, &quot;John&quot;, &quot;Thomas&quot;,&apos;Lily&apos;,&apos;Lucy&apos;];</div><div class="line">arr.splice(4,2,&apos;Tom&apos;);</div><div class="line">//[&quot;George&quot;, &quot;John&quot;, &quot;Thomas&quot;, &quot;Tom&quot;]</div></pre></td></tr></table></figure>
+<ul>
+<li>添加功能：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = [&quot;George&quot;, &quot;John&quot;, &quot;Thomas&quot;,&apos;Lily&apos;,&apos;Lucy&apos;];</div><div class="line">arr.splice(2,0,&apos;haha&apos;,&apos;123123&apos;);</div><div class="line">//[&quot;George&quot;, &quot;John&quot;, &quot;haha&quot;, &quot;123123&quot;, &quot;Thomas&quot;, &quot;Lily&quot;, &quot;Lucy&quot;]</div></pre></td></tr></table></figure>
+<h5 id="5、Array-isArray"><a href="#5、Array-isArray" class="headerlink" title="5、Array.isArray()"></a>5、Array.isArray()</h5><ul>
+<li>功能说明：判断一个对象是不是数组</li>
+<li>语法：Array.isArray(vArg)</li>
+<li>返回值：Boolean 判断结果</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr=[];</div><div class="line">Array.isArray(arr);</div><div class="line">//true</div></pre></td></tr></table></figure>
+<h4 id="二、Es5中Array的扩展方法"><a href="#二、Es5中Array的扩展方法" class="headerlink" title="二、Es5中Array的扩展方法"></a>二、Es5中Array的扩展方法</h4><h5 id="1、arr-indexOf-searchElement-fromIndex"><a href="#1、arr-indexOf-searchElement-fromIndex" class="headerlink" title="1、arr.indexOf(searchElement[, fromIndex])"></a>1、arr.indexOf(searchElement[, fromIndex])</h5><p>JavaScript 1.6 引入</p>
+<ul>
+<li>功能说明：从前往后，查询数组中指定元素的索引位置</li>
+<li>语法：arr.indexOf(match[, fromIndex])</li>
+<li>参数说明：<ul>
+<li>match：查询项</li>
+<li>fromIndex：查询的起始位索引位置，如果为负数，则从Array.length + fromIndex往后开始查找</li>
+</ul>
+</li>
+<li>返回值：Number 指定元素的索引位置，查询不到时返回-1</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;a&apos;, &apos;b&apos;, &apos;a&apos;, &apos;b&apos;, &apos;a&apos;];</div><div class="line">console.log(a.indexOf(&apos;b&apos;)); //  1</div><div class="line">console.log(a.indexOf(&apos;b&apos;, 2)); // 3</div><div class="line">console.log(a.indexOf(&apos;z&apos;)); // -1</div></pre></td></tr></table></figure>
+<p>// 对于低级浏览器，如IE6-IE8，扩展如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">if (typeof Array.prototype.indexOf != &quot;function&quot;) &#123;</div><div class="line">  Array.prototype.indexOf = function (searchElement, fromIndex) &#123;</div><div class="line">    var index = -1;</div><div class="line">    fromIndex = fromIndex * 1 || 0;</div><div class="line"></div><div class="line">    for (var k = 0, length = this.length; k &lt; length; k++) &#123;</div><div class="line">      if (k &gt;= fromIndex &amp;&amp; this[k] === searchElement) &#123;</div><div class="line">          index = k;</div><div class="line">          break;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return index;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="2、arr-lastIndexOf-searchElement-fromIndex"><a href="#2、arr-lastIndexOf-searchElement-fromIndex" class="headerlink" title="2、arr.lastIndexOf(searchElement[, fromIndex])"></a>2、arr.lastIndexOf(searchElement[, fromIndex])</h5><p>JavaScript 1.6 引入</p>
+<ul>
+<li>功能说明：从后往前，查询数组中指定元素的索引位置</li>
+<li>语法：arr.lastIndexOf(match[, fromIndex])</li>
+<li>参数说明：<ul>
+<li>match：查询项</li>
+<li>fromIndex：查询的起始位索引位置，如果为负数，则从Array.length + fromIndex往后开始查找</li>
+</ul>
+</li>
+<li>返回值：Number 指定元素的索引位置，查询不到时返回-1</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;a&apos;, &apos;b&apos;, &apos;a&apos;, &apos;b&apos;, &apos;a&apos;];</div><div class="line">console.log(a.lastIndexOf(&apos;b&apos;)); //  3</div><div class="line">console.log(a.lastIndexOf(&apos;b&apos;, 2)); // 1</div><div class="line">console.log(a.lastIndexOf(&apos;z&apos;)); // -1</div></pre></td></tr></table></figure>
+<p>// 对于低级浏览器，如IE6-IE8，扩展如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">if (typeof Array.prototype.lastIndexOf != &quot;function&quot;) &#123;</div><div class="line">  Array.prototype.lastIndexOf = function (searchElement, fromIndex) &#123;</div><div class="line">    var index = -1, length = this.length;</div><div class="line">    fromIndex = fromIndex * 1 || length - 1;</div><div class="line"></div><div class="line">    for (var k = length - 1; k &gt; -1; k-=1) &#123;</div><div class="line">        if (k &lt;= fromIndex &amp;&amp; this[k] === searchElement) &#123;</div><div class="line">            index = k;</div><div class="line">            break;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return index;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="3、arr-every-callback-thisObject"><a href="#3、arr-every-callback-thisObject" class="headerlink" title="3、arr.every(callback[, thisObject])"></a>3、arr.every(callback[, thisObject])</h5><p>JavaScript 1.6 引入</p>
+<ul>
+<li>功能说明：遍历数组，验证数组中的每一个元素是否符合回调函数指定的规则。如数组中的每一项都符合回调函数指定的规则，则返回true，否则返回false</li>
+<li>语法：arr.every(fun[, thisp])</li>
+<li>参数说明：<ul>
+<li>fun Function：需要执行的回调函数</li>
+<li>thisp Any：fun函数中this关键字指向的内容</li>
+</ul>
+</li>
+<li>返回值：Boolean 数组中的每一项是否符合指定的规则</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a1 = [1, 2, 3];</div><div class="line">console.log(a1.every(isNumber)); // true</div><div class="line">var a2 = [1, &apos;2&apos;, 3];</div><div class="line">console.log(a2.every(isNumber)); // false</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var myarray = [2,4,9,10,28,10,19];</div><div class="line">myarray.every(function(v, i)&#123;</div><div class="line">  return v &gt; 2;</div><div class="line">&#125;);</div><div class="line">// 返回结果：false</div></pre></td></tr></table></figure>
+<p>// 对于低级浏览器，如IE6-IE8，扩展如下：（与some相比就是true和false调换一下）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">if (typeof Array.prototype.every != &quot;function&quot;) &#123;</div><div class="line">  Array.prototype.every = function (fn, context) &#123;</div><div class="line">    var passed = true;</div><div class="line">    if (typeof fn === &quot;function&quot;) &#123;</div><div class="line">       for (var k = 0, length = this.length; k &lt; length; k++) &#123;</div><div class="line">          if (passed === false) break;</div><div class="line">          passed = !!fn.call(context, this[k], k, this);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return passed;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="4、arr-filter-callback-thisObject"><a href="#4、arr-filter-callback-thisObject" class="headerlink" title="4、arr.filter(callback[, thisObject])"></a>4、arr.filter(callback[, thisObject])</h5><p>JavaScript 1.6 引入</p>
+<ul>
+<li>功能说明：遍历数组，把符合回调函数指定规则的元素组成一个新的数组并返回</li>
+<li>语法：arr.filter(fun[, thisp])</li>
+<li>参数说明：<ul>
+<li>fun：需要执行的回调函数</li>
+<li>thisp函数中this关键字指向的内容</li>
+</ul>
+</li>
+<li>返回值：Array 过滤后的新数组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a1 = [&apos;a&apos;, 10, &apos;b&apos;, 20, &apos;c&apos;, 30];</div><div class="line">var a2 = a1.filter(function(item) &#123; </div><div class="line">  return typeof item == &apos;number&apos;; </div><div class="line"> &#125;);</div><div class="line">//10,20,30</div></pre></td></tr></table></figure>
+<p>// 对于低级浏览器，如IE6-IE8，扩展如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">if (typeof Array.prototype.filter != &quot;function&quot;) &#123;</div><div class="line">  Array.prototype.filter = function (fn, context) &#123;</div><div class="line">    var arr = [];</div><div class="line">    if (typeof fn === &quot;function&quot;) &#123;</div><div class="line">       for (var k = 0, length = this.length; k &lt; length; k++) &#123;</div><div class="line">          fn.call(context, this[k], k, this) &amp;&amp; arr.push(this[k]);</div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line">    return arr;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="5、arr-map-callback-thisObject"><a href="#5、arr-map-callback-thisObject" class="headerlink" title="5、arr.map(callback[, thisObject])"></a>5、arr.map(callback[, thisObject])</h5><p>JavaScript 1.6 引入</p>
+<ul>
+<li>功能说明：在数组中的每一个项运行一个函数，并将所有的结果作为数组返回</li>
+<li>语法：arr.map(fun[, thisp])</li>
+<li>参数说明：<ul>
+<li>fun：需要执行的回调函数</li>
+<li>thisp：fun函数中this关键字指向的内容</li>
+</ul>
+</li>
+<li>返回值：Array 遍历后的新数组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var myarray = [2,4,9,10,28,10,19];</div><div class="line">myarray.map(function(value, index, obj)&#123;</div><div class="line">  return value + 1;</div><div class="line">&#125;);</div><div class="line">// 返回结果：[3,5,10,11,29,11,20]</div></pre></td></tr></table></figure>
+<p>callback需要有return值，如果没有，就像下面这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var data = [1, 2, 3, 4];</div><div class="line">var arrayOfSquares = data.map(function() &#123;&#125;);</div><div class="line"></div><div class="line">//[undefined, undefined, undefined, undefined]</div></pre></td></tr></table></figure>
+<p>// 对于低级浏览器，如IE6-IE8，扩展如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">if (typeof Array.prototype.map != &quot;function&quot;) &#123;</div><div class="line">  Array.prototype.map = function (fn, context) &#123;</div><div class="line">    var arr = [];</div><div class="line">    if (typeof fn === &quot;function&quot;) &#123;</div><div class="line">      for (var k = 0, length = this.length; k &lt; length; k++) &#123;      </div><div class="line">         arr.push(fn.call(context, this[k], k, this));</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return arr;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="6、arr-forEach-callback-thisObject"><a href="#6、arr-forEach-callback-thisObject" class="headerlink" title="6、arr.forEach(callback[, thisObject])"></a>6、arr.forEach(callback[, thisObject])</h5><p>JavaScript 1.6 引入</p>
+<ul>
+<li>功能说明：同 Array.prototype.map，不同的是，该方法无返回值</li>
+</ul>
+<p>1、等同于下面这个传统的for循环：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var array = [1, 2, 3, 4];</div><div class="line"></div><div class="line">for (var k = 0, length = array.length; k &lt; length; k++) &#123;</div><div class="line">  alert(array[k]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2、Array在ES5新增的方法中，参数都是function类型，例如，数组求和：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var sum = 0;</div><div class="line"></div><div class="line">[1, 2, 3, 4].forEach(function (item, index, array) &#123;</div><div class="line">  sum += item;</div><div class="line">&#125;);</div><div class="line">// 10</div></pre></td></tr></table></figure>
+<p>3、更进一步，forEach除了接受一个必须的回调函数参数，还可以接受一个可选的上下文参数（改变回调函数里面的this指向）（第2个参数）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var database = &#123;</div><div class="line">  users: [&quot;张含韵&quot;, &quot;江一燕&quot;, &quot;李小璐&quot;],</div><div class="line">  sendEmail: function (user) &#123;</div><div class="line">    if (this.isValidUser(user)) &#123;</div><div class="line">      console.log(&quot;你好，&quot; + user);</div><div class="line">    &#125; else &#123;</div><div class="line">      console.log(&quot;抱歉，&quot;+ user +&quot;，你不是本家人&quot;);</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  isValidUser: function (user) &#123;</div><div class="line">    return /^张/.test(user);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 给每个人法邮件</div><div class="line">database.users.forEach(  // database.users中人遍历</div><div class="line">  database.sendEmail,    // 发送邮件</div><div class="line">  database               // 使用database代替上面的this</div><div class="line">);</div></pre></td></tr></table></figure>
+<p><strong>如果这第2个可选参数不指定，则使用全局对象代替（在浏览器是为window），严格模式下甚至是undefined.</strong></p>
+<p><strong>4、另外，forEach不会遍历纯粹“占着官位吃空饷”的元素的</strong>，例如下面这个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var array = [1, 2, 3];</div><div class="line"></div><div class="line">delete array[1]; // 移除 2</div><div class="line">alert(array); // &quot;1,,3&quot;</div><div class="line"></div><div class="line">alert(array.length); // but the length is still 3</div><div class="line"></div><div class="line">array.forEach(alert); // 弹出的仅仅是1和3</div></pre></td></tr></table></figure>
+<p>// 对于低级浏览器，如IE6-IE8，扩展如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">if (typeof Array.prototype.forEach != &quot;function&quot;) &#123;</div><div class="line">  Array.prototype.forEach = function (fn, context) &#123;</div><div class="line">    for (var k = 0, length = this.length; k &lt; length; k++) &#123;</div><div class="line">      if (typeof fn === &quot;function&quot; &amp;&amp; Object.prototype.hasOwnProperty.call(this, k)) &#123;</div><div class="line">        fn.call(context, this[k], k, this);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="7、arr-some-callback-thisObject"><a href="#7、arr-some-callback-thisObject" class="headerlink" title="7、arr.some(callback[, thisObject])"></a>7、arr.some(callback[, thisObject])</h5><p>JavaScript 1.6 引入</p>
+<ul>
+<li>功能说明：遍历数组，验证数组是否有某项元素符合回调函数指定的规则。如数组中存在符合验证规则的项，则返回true，否则返回false</li>
+<li>语法：arr.some(fun[, thisp])</li>
+<li>参数说明：<ul>
+<li>fun：需要执行的回调函数</li>
+<li>thisp：fun函数中this关键字指向的内容</li>
+</ul>
+</li>
+<li>返回值：Boolean 数组中是否存在符合规则的项</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var myarray = [2,4,9,10,28,10,19];</div><div class="line">myarray.some(function(value, index, obj)&#123;</div><div class="line">  return value &lt; 3;</div><div class="line">&#125;);</div><div class="line">// 返回结果：true</div></pre></td></tr></table></figure>
+<p>// 对于低级浏览器，如IE6-IE8，扩展如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">if (typeof Array.prototype.some != &quot;function&quot;) &#123;</div><div class="line">  Array.prototype.some = function (fn, context) &#123;</div><div class="line">  var passed = false;</div><div class="line">  if (typeof fn === &quot;function&quot;) &#123;</div><div class="line">      for (var k = 0, length = this.length; k &lt; length; k++) &#123;</div><div class="line">      if (passed === true) break;</div><div class="line">      passed = !!fn.call(context, this[k], k, this);</div><div class="line">    &#125;</div><div class="line">    &#125;</div><div class="line">  return passed;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="8、arr-reduce-callback-initialValue"><a href="#8、arr-reduce-callback-initialValue" class="headerlink" title="8、arr.reduce(callback[, initialValue])"></a>8、arr.reduce(callback[, initialValue])</h5><p>JavaScript 1.8 引入</p>
+<ul>
+<li>callback函数接受4个参数：之前值、当前值、索引值以及数组本身。</li>
+<li>initialValue参数可选，表示初始值。若指定，则当作最初使用的previous值；如果缺省，则使用数组的第一个元素作为previous初始值，同时current往后排一位，相比有initialValue值少一次迭代。</li>
+<li>类似于“迭代”、“递归(recursion)”</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var sum = [1, 2, 3, 4].reduce(function (previous, current, index, array) &#123;</div><div class="line">  return previous + current;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">console.log(sum); // 10</div></pre></td></tr></table></figure>
+<p>说明：</p>
+<ul>
+<li>因为initialValue不存在，因此一开始的previous值等于数组的第一个元素。</li>
+<li>从而current值在第一次调用的时候就是2.</li>
+<li>最后两个参数为索引值index以及数组本身array.</li>
+</ul>
+<p>以下为循环执行过程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 初始设置</div><div class="line">previous = initialValue = 1, current = 2</div><div class="line"></div><div class="line">// 第一次迭代</div><div class="line">previous = (1 + 2) =  3, current = 3</div><div class="line"></div><div class="line">// 第二次迭代</div><div class="line">previous = (3 + 3) =  6, current = 4</div><div class="line"></div><div class="line">// 第三次迭代</div><div class="line">previous = (6 + 4) =  10, current = undefined (退出)</div></pre></td></tr></table></figure>
+<p>有了reduce，我们可以轻松实现二维数组的扁平化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var matrix = [</div><div class="line">  [1, 2],</div><div class="line">  [3, 4],</div><div class="line">  [5, 6]</div><div class="line">];</div><div class="line"></div><div class="line">// 二维数组扁平化</div><div class="line">var flatten = matrix.reduce(function (previous, current) &#123;</div><div class="line">  return previous.concat(current);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">console.log(flatten); // [1, 2, 3, 4, 5, 6]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = [10, 20, 30];</div><div class="line">var total = a.reduce(function(first, second) &#123; return first + second; &#125;, 0);</div><div class="line">alert(total) // Alerts 60</div></pre></td></tr></table></figure>
+<p>// 对于低级浏览器，如IE6-IE8，扩展如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">if (typeof Array.prototype.reduce != &quot;function&quot;) &#123;</div><div class="line">  Array.prototype.reduce = function (callback, initialValue ) &#123;</div><div class="line">     var previous = initialValue, k = 0, length = this.length;</div><div class="line">     if (typeof initialValue === &quot;undefined&quot;) &#123;</div><div class="line">        previous = this[0];</div><div class="line">        k = 1;</div><div class="line">     &#125;</div><div class="line">     </div><div class="line">    if (typeof callback === &quot;function&quot;) &#123;</div><div class="line">      for (k; k &lt; length; k++) &#123;</div><div class="line">         this.hasOwnProperty(k) &amp;&amp; (previous = callback(previous, this[k], k, this));</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return previous;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="8、arr-reduceRight-callback-initialValue"><a href="#8、arr-reduceRight-callback-initialValue" class="headerlink" title="8、arr.reduceRight(callback[, initialValue])"></a>8、arr.reduceRight(callback[, initialValue])</h5><p>JavaScript 1.8 引入</p>
+<p>reduceRight跟reduce相比，实现上差异在于reduceRight是从数组的末尾开始实现。</p>
+<p>看下面这个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var data = [1, 2, 3, 4];</div><div class="line">var specialDiff = data.reduceRight(function (previous, current, index) &#123;</div><div class="line">  if (index == 0) &#123;</div><div class="line">    return previous + current;</div><div class="line">  &#125;</div><div class="line">  return previous - current;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">console.log(specialDiff); // 0</div></pre></td></tr></table></figure>
+<p>结果0是如何得到的呢？<br>我们一步一步查看循环执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 初始设置</div><div class="line">index = 3, previous = initialValue = 4, current = 3</div><div class="line"></div><div class="line">// 第一次迭代</div><div class="line">index = 2, previous = (4- 3) = 1, current = 2</div><div class="line"></div><div class="line">// 第二次迭代</div><div class="line">index = 1, previous = (1 - 2) = -1, current = 1</div><div class="line"></div><div class="line">// 第三次迭代</div><div class="line">index = 0, previous = (-1 + 1) = 0, current = undefined (退出)</div></pre></td></tr></table></figure>
+<p>// 对于低级浏览器，如IE6-IE8，扩展如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">if (typeof Array.prototype.reduceRight != &quot;function&quot;) &#123;</div><div class="line">  Array.prototype.reduceRight = function (callback, initialValue ) &#123;</div><div class="line">    var length = this.length, k = length - 1, previous = initialValue;</div><div class="line">    if (typeof initialValue === &quot;undefined&quot;) &#123;</div><div class="line">        previous = this[length - 1];</div><div class="line">        k--;</div><div class="line">    &#125;</div><div class="line">    if (typeof callback === &quot;function&quot;) &#123;</div><div class="line">       for (k; k &gt; -1; k-=1) &#123;          </div><div class="line">          this.hasOwnProperty(k) &amp;&amp; (previous = callback(previous, this[k], k, this));</div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line">    return previous;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="三、Array不常见方法"><a href="#三、Array不常见方法" class="headerlink" title="三、Array不常见方法"></a>三、Array不常见方法</h4><h5 id="1、Array-from（arrayLike-，mapFn-，thisArg-）"><a href="#1、Array-from（arrayLike-，mapFn-，thisArg-）" class="headerlink" title="1、Array.from（arrayLike [，mapFn [，thisArg]]）"></a>1、Array.from（arrayLike [，mapFn [，thisArg]]）</h5><p>Array.from（）方法从数组或可迭代对象创建一个新的Array实例。</p>
+<ul>
+<li>参数<ul>
+<li>arrayLike 将数组转换为数组的数组或可迭代对象。</li>
+<li>mapFn可选 映射函数调用数组的每个元素。</li>
+<li>thisArg可选 执行mapFn时使用的值。</li>
+<li>返回值</li>
+<li>一个新的Array实例。</li>
+</ul>
+</li>
+</ul>
+<p>1.一个字符串的数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Array.from(&apos;foo&apos;); </div><div class="line">// [&quot;f&quot;, &quot;o&quot;, &quot;o&quot;]</div></pre></td></tr></table></figure>
+<p>2.数组集合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var s = new Set([&apos;foo&apos;, window]); </div><div class="line">Array.from(s); </div><div class="line">// [&quot;foo&quot;, window]</div></pre></td></tr></table></figure>
+<p>3.Array from a Map</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var m = new Map([[1, 2], [2, 4], [4, 8]]);</div><div class="line">Array.from(m); </div><div class="line">// [[1, 2], [2, 4], [4, 8]]</div></pre></td></tr></table></figure>
+<p>4.类对象数组（arguments）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function f() &#123;</div><div class="line">  return Array.from(arguments);</div><div class="line">&#125;</div><div class="line"></div><div class="line">f(1, 2, 3);</div><div class="line">// [1, 2, 3]</div></pre></td></tr></table></figure>
+<p>5.使用箭头函数和Array.from</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Array.from([1, 2, 3], x =&gt; x + x);      </div><div class="line">// [2, 4, 6]</div><div class="line"></div><div class="line">Array.from(&#123;length: 5&#125;, (v, i) =&gt; i);</div><div class="line">// [0, 1, 2, 3, 4]</div></pre></td></tr></table></figure>
+<h5 id="2、Array-of-element0-element1-…-elementN"><a href="#2、Array-of-element0-element1-…-elementN" class="headerlink" title="2、Array.of(element0[, element1[, …[, elementN]]])"></a>2、Array.of(element0[, element1[, …[, elementN]]])</h5><p>Array.of（）方法创建一个具有可变数量的参数的新的Array实例，而不管参数的数量或类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Array.of(7);       // [7] </div><div class="line">Array.of(1, 2, 3); // [1, 2, 3]</div><div class="line"></div><div class="line">Array(7);          // [ , , , , , , ]</div><div class="line">Array(1, 2, 3);    // [1, 2, 3]</div></pre></td></tr></table></figure>
+<h5 id="3、Array-copyWithin-target-start-end"><a href="#3、Array-copyWithin-target-start-end" class="headerlink" title="3、Array.copyWithin(target, start, end)"></a>3、Array.copyWithin(target, start, end)</h5><p>copyWithin（）方法将数组的一部分浅层复制到同一个数组中的另一个位置，并返回它，而不修改其大小。<br>参数</p>
+<ul>
+<li>target目标：基于零的索引，如果为负，目标将从最后计算。如果target大于或等于arr.length，则不会复制任何内容。如果目标在启动后定位，则复制的序列将被修剪以适应arr.length。</li>
+<li>start可选，从零开始复制元素的索引。如果是负数，则从最后开始计数。<br>如果省略start，则copyWithin将从start（默认为0）复制。</li>
+<li>end可选，从零起始的索引从中复制元素。 copyWithin复制到但不包括结束。如果是负数，结束将从最后计数。如果省略end，则copyWithin将复制到结束（默认为arr.length）。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">[1, 2, 3, 4, 5].copyWithin(-2);</div><div class="line">// [1, 2, 3, 1, 2]</div><div class="line"></div><div class="line">[1, 2, 3, 4, 5].copyWithin(0, 3);</div><div class="line">// [4, 5, 3, 4, 5]</div><div class="line"></div><div class="line">[1, 2, 3, 4, 5].copyWithin(0, 3, 4);</div><div class="line">// [4, 2, 3, 4, 5]</div><div class="line"></div><div class="line">[1, 2, 3, 4, 5].copyWithin(-2, -3, -1);</div><div class="line">// [1, 2, 3, 3, 4]</div><div class="line"></div><div class="line">[].copyWithin.call(&#123;length: 5, 3: 1&#125;, 0, 3);</div><div class="line">// &#123;0: 1, 3: 1, length: 5&#125;</div><div class="line"></div><div class="line">var i32a = new Int32Array([1, 2, 3, 4, 5]);</div><div class="line">i32a.copyWithin(0, 2);</div><div class="line">// Int32Array [3, 4, 5, 4, 5]</div><div class="line"></div><div class="line">[].copyWithin.call(new Int32Array([1, 2, 3, 4, 5]), 0, 3, 4);</div><div class="line">// Int32Array [4, 2, 3, 4, 5]</div></pre></td></tr></table></figure>
+<h5 id="4、Array-entries"><a href="#4、Array-entries" class="headerlink" title="4、Array. entries()"></a>4、Array. entries()</h5><p>entries（）方法返回一个新的Array Iterator对象，该对象包含数组中每个索引的键/值对。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];</div><div class="line">var iterator = a.entries();</div><div class="line"></div><div class="line">for (let e of iterator) &#123;</div><div class="line">  console.log(e);</div><div class="line">&#125;</div><div class="line">// [0, &apos;a&apos;]</div><div class="line">// [1, &apos;b&apos;]</div><div class="line">// [2, &apos;c&apos;]</div></pre></td></tr></table></figure>
+<h5 id="5、Array-fill-value-start-end"><a href="#5、Array-fill-value-start-end" class="headerlink" title="5、Array. fill(value, start, end)"></a>5、Array. fill(value, start, end)</h5><p>fill（）方法将一个数组的所有元素从起始索引填充到具有静态值的结束索引。<br>参数</p>
+<ul>
+<li>value 填充数组的值。</li>
+<li>start 开始索引，默认为0。</li>
+<li>end 结束索引，默认为this.length。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[1, 2, 3].fill(4);               // [4, 4, 4]</div><div class="line">[1, 2, 3].fill(4, 1);            // [1, 4, 4]</div><div class="line">[1, 2, 3].fill(4, 1, 2);         // [1, 4, 3]</div><div class="line">[1, 2, 3].fill(4, 1, 1);         // [1, 2, 3]</div><div class="line">[1, 2, 3].fill(4, -3, -2);       // [4, 2, 3]</div><div class="line">[1, 2, 3].fill(4, NaN, NaN);     // [1, 2, 3]</div><div class="line">Array(3).fill(4);                // [4, 4, 4]</div><div class="line">[].fill.call(&#123; length: 3 &#125;, 4);  // &#123;0: 4, 1: 4, 2: 4, length: 3&#125;</div></pre></td></tr></table></figure>
+<h5 id="6、Array-find"><a href="#6、Array-find" class="headerlink" title="6、Array.find()"></a>6、Array.find()</h5><p>find（）方法返回数组中满足提供的测试功能的第一个元素的值。否则返回未定义。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function isBigEnough(element) &#123;</div><div class="line">  return element &gt;= 15;</div><div class="line">&#125;</div><div class="line"></div><div class="line">[12, 5, 8, 130, 44].find(isBigEnough); // 130</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var inventory = [</div><div class="line">    &#123;name: &apos;apples&apos;, quantity: 2&#125;,</div><div class="line">    &#123;name: &apos;bananas&apos;, quantity: 0&#125;,</div><div class="line">    &#123;name: &apos;cherries&apos;, quantity: 5&#125;</div><div class="line">];</div><div class="line"></div><div class="line">function findCherries(fruit) &#123; </div><div class="line">    return fruit.name === &apos;cherries&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">console.log(inventory.find(findCherries)); </div><div class="line">// &#123; name: &apos;cherries&apos;, quantity: 5 &#125;</div></pre></td></tr></table></figure>
+<h5 id="7、Array-findIndex"><a href="#7、Array-findIndex" class="headerlink" title="7、Array.findIndex()"></a>7、Array.findIndex()</h5><p>findIndex（）方法返回数组中满足提供的测试功能的第一个元素的索引。否则返回-1。</p>
+<h5 id="8、Array-includes-searchElement-fromIndex"><a href="#8、Array-includes-searchElement-fromIndex" class="headerlink" title="8、Array.includes(searchElement, fromIndex)"></a>8、Array.includes(searchElement, fromIndex)</h5><p>includes（）方法确定数组是否包含某个元素，根据需要返回true或false。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[1, 2, 3].includes(2);     // true</div><div class="line">[1, 2, 3].includes(4);     // false</div><div class="line">[1, 2, 3].includes(3, 3);  // false</div><div class="line">[1, 2, 3].includes(3, -1); // true</div><div class="line">[1, 2, NaN].includes(NaN); // true</div></pre></td></tr></table></figure>
+<h5 id="9、Array-keys"><a href="#9、Array-keys" class="headerlink" title="9、Array.keys()"></a>9、Array.keys()</h5><p>keys（）方法返回一个新的Array Iterator，它包含数组中每个索引的键。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var arr = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];</div><div class="line">var iterator = arr.keys();</div><div class="line"></div><div class="line">console.log(iterator.next()); // &#123; value: 0, done: false &#125;</div><div class="line">console.log(iterator.next()); // &#123; value: 1, done: false &#125;</div><div class="line">console.log(iterator.next()); // &#123; value: 2, done: false &#125;</div><div class="line">console.log(iterator.next()); // &#123; value: undefined, done: true &#125;</div></pre></td></tr></table></figure>
+<p>与Object.keys()的区别：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [&apos;a&apos;, , &apos;c&apos;];</div><div class="line">var sparseKeys = Object.keys(arr);</div><div class="line">var denseKeys = [...arr.keys()];</div><div class="line">console.log(sparseKeys); // [&apos;0&apos;, &apos;2&apos;]</div><div class="line">console.log(denseKeys);  // [0, 1, 2]</div></pre></td></tr></table></figure>
+<h5 id="10、Array-values"><a href="#10、Array-values" class="headerlink" title="10、Array.values()"></a>10、Array.values()</h5><p>values（）方法返回一个新的Array Iterator对象，该对象包含数组中每个索引的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;w&apos;, &apos;y&apos;, &apos;k&apos;, &apos;o&apos;, &apos;p&apos;]; </div><div class="line">var iterator = a.values();</div><div class="line"></div><div class="line">console.log(iterator.next().value); // w </div><div class="line">console.log(iterator.next().value); // y </div><div class="line">console.log(iterator.next().value); // k </div><div class="line">console.log(iterator.next().value); // o </div><div class="line">console.log(iterator.next().value); // p</div></pre></td></tr></table></figure>
+<h3 id="五、LT-Array"><a href="#五、LT-Array" class="headerlink" title="五、LT.Array"></a>五、LT.Array</h3><h4 id="1、LT-Array-remove-）"><a href="#1、LT-Array-remove-）" class="headerlink" title="1、LT.Array.remove(）"></a>1、LT.Array.remove(）</h4><ul>
+<li>功能说明：从数组中移除指定的元素</li>
+<li>语法：LT.Array.remove(source, value)</li>
+<li>参数说明：<ul>
+<li>source Array：需要操作的数组</li>
+<li>value Any：要移除的元素</li>
+</ul>
+</li>
+<li>返回值：Array 移除后的数组</li>
+<li>注意事项：该操作会直接操作源数组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">LT.Array.remove([1, 2, 3], 3);</div><div class="line">// [1, 2]</div></pre></td></tr></table></figure>
+<h4 id="2、LT-Array-removeAt-）"><a href="#2、LT-Array-removeAt-）" class="headerlink" title="2、LT.Array.removeAt(）"></a>2、LT.Array.removeAt(）</h4><ul>
+<li>功能说明：从数组中移除指定位置的元素</li>
+<li>语法：LT.Array.removeAt(source, index)</li>
+<li>参数说明：<ul>
+<li>source Array：需要操作的数组</li>
+<li>index Number：要移除项的索引位置</li>
+</ul>
+</li>
+<li>返回值：Array 移除后的数组</li>
+<li>注意事项：该操作会直接操作源数组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">LT.Array.removeAt([1, 2, 3], 2);</div><div class="line">// [1, 2]</div></pre></td></tr></table></figure>
+<h4 id="3、LT-Array-remove-）"><a href="#3、LT-Array-remove-）" class="headerlink" title="3、LT.Array.remove(）"></a>3、LT.Array.remove(）</h4><ul>
+<li>功能说明：从数组中移除指定的元素</li>
+<li>语法：LT.Array.remove(source, value)</li>
+<li>参数说明：<ul>
+<li>source Array：需要操作的数组</li>
+<li>value Any：要移除的元素</li>
+</ul>
+</li>
+<li>返回值：Array 移除后的数组</li>
+<li>注意事项：该操作会直接操作源数组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">LT.Array.remove([1, 2, 3], 3);</div><div class="line">// [1, 2]</div></pre></td></tr></table></figure>
+<h4 id="4、LT-Array-empty-）"><a href="#4、LT-Array-empty-）" class="headerlink" title="4、LT.Array.empty(）"></a>4、LT.Array.empty(）</h4><ul>
+<li>功能说明：清空一个数组</li>
+<li>语法：LT.Array.empty(source)</li>
+<li>参数说明：<ul>
+<li>source Array：需要操作的数组</li>
+<li>返回值：Array 移除后的数组</li>
+</ul>
+</li>
+<li>注意事项：该操作会直接操作源数组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">LT.Array.empty([1, 2, 3]);</div><div class="line">// []</div></pre></td></tr></table></figure>
+<h4 id="5、LT-Array-unique-）"><a href="#5、LT-Array-unique-）" class="headerlink" title="5、LT.Array.unique(）"></a>5、LT.Array.unique(）</h4><ul>
+<li>功能说明：过滤数组中的相同项。如果两个元素相同，会删除后一个元素</li>
+<li>语法：LT.Array.unique(source[, compareFn])</li>
+<li>参数说明：<ul>
+<li>source Array：需要过滤的数组</li>
+<li>compareFn Function：比较函数</li>
+</ul>
+</li>
+<li>返回值：Array 过滤后的新数组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">LT.Array.unique([1, 2, 3, 3, 4, 5]);</div><div class="line">// [1, 2, 3, 4, 5]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">LT.Array = &#123;</div><div class="line">  remove: function(source, value) &#123;</div><div class="line">    for (var i = 0; i &lt; source.length; i++) &#123;</div><div class="line">      if (source[i] === value) &#123;</div><div class="line">        source.splice(i, 1);</div><div class="line">        break;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return source;</div><div class="line">  &#125;,</div><div class="line">  removeAt: function(source, index) &#123;</div><div class="line">    source.splice(index, 1)[0];</div><div class="line">    return source;</div><div class="line">  &#125;,</div><div class="line">  empty: function(source) &#123;</div><div class="line">    source.length = 0;</div><div class="line">  &#125;,</div><div class="line">  unique: function(source, compareFn) &#123;</div><div class="line">    var len = source.length,</div><div class="line">      result = source.slice(0),</div><div class="line">      i, datum;</div><div class="line">    if (typeof compareFn !== &apos;function&apos;) &#123;</div><div class="line">      compareFn = function(item1, item2) &#123;</div><div class="line">        return item1 === item2;</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line">    // 从后往前双重循环比较，如果两个元素相同，删除后一个</div><div class="line">    while (--len &gt; 0) &#123;</div><div class="line">      datum = result[len];</div><div class="line">      i = len;</div><div class="line">      while (i--) &#123;</div><div class="line">        if (compareFn(datum, result[i])) &#123;</div><div class="line">          result.splice(len, 1);</div><div class="line">          break;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="六、forEach方法的区别"><a href="#六、forEach方法的区别" class="headerlink" title="六、forEach方法的区别"></a>六、forEach方法的区别</h3><p>forEach与for循环的区别</p>
+<p>for in声明循环数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;a: 1, b: 2, c: 3&#125;;</div><div class="line">for (var item in obj) &#123;</div><div class="line">  console.log(`obj.$&#123;item&#125; = $&#123;obj[item]&#125;`);</div><div class="line">&#125;</div><div class="line">// Output:</div><div class="line">// &quot;obj.a = 1&quot;</div><div class="line">// &quot;obj.b = 2&quot;</div><div class="line">// &quot;obj.c = 3&quot;</div></pre></td></tr></table></figure>
+<p>forEach方法中的function回调支持3个参数，第1个是遍历的数组内容；第2个是对应的数组索引，第3个是数组本身。</p>
+<p>因此，我们有：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[].forEach(function(value, index, array) &#123;</div><div class="line">    // ...</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>对比jQuery中的<code>$.each</code>方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$.each([], function(index, value, array) &#123;</div><div class="line">    // ..</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>对比map</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[].map(function(value, index, array) &#123;</div><div class="line">    // ...</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="七、扩展模拟Array对象"><a href="#七、扩展模拟Array对象" class="headerlink" title="七、扩展模拟Array对象"></a>七、扩展模拟Array对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">class XArray &#123;</div><div class="line">  constructor() &#123;</div><div class="line">    this.dataSource = &#123;&#125;;</div><div class="line">    this.length = 0;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  push(element) &#123;</div><div class="line">    return this.dataSource[this.length++] = element;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  pop() &#123;</div><div class="line">    if (this.length &gt; 0) &#123;</div><div class="line">      this.length--;</div><div class="line">      let ret = this.dataSource[this.length];</div><div class="line">      delete this.dataSource[this.length];</div><div class="line">      return ret;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  shift() &#123; &#125;</div><div class="line"></div><div class="line">  unshift() &#123; &#125;</div><div class="line"></div><div class="line">  slice() &#123; &#125;</div><div class="line"></div><div class="line">  splice() &#123; &#125;</div><div class="line"></div><div class="line">  forEach() &#123; &#125;</div><div class="line"></div><div class="line">  toString() &#123;</div><div class="line">    let ret = &apos;&apos;;</div><div class="line">    for (let i = 0; i &lt; this.length; i++) &#123;</div><div class="line">      if (i === 0) &#123;</div><div class="line">        ret = this.dataSource[i];</div><div class="line">      &#125; else &#123;</div><div class="line">        ret += &apos;, &apos; + this.dataSource[i];</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return ret;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var arr = new XArray();</div><div class="line">arr.push(1);</div><div class="line">arr.push(2);</div><div class="line">arr.push(3);</div><div class="line">console.log(</div><div class="line">  arr.toString()</div><div class="line">);</div><div class="line">arr.pop();</div><div class="line">console.log(</div><div class="line">  arr.toString()</div><div class="line">);</div></pre></td></tr></table></figure>
+<h3 id="ES6入门之set和map"><a href="#ES6入门之set和map" class="headerlink" title="ES6入门之set和map"></a>ES6入门之set和map</h3><h4 id="1、Set"><a href="#1、Set" class="headerlink" title="1、Set"></a>1、Set</h4><p>ES6提供了新的数据结构Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
+<p>Set函数可以接受一个数组（或类似数组的对象）作为参数，用来初始化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var set = new Set([1, 2, 3, 4, 4]);</div><div class="line">[...set]</div><div class="line">// [1, 2, 3, 4]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var s = new Set();</div><div class="line">[2, 3, 5, 4, 5, 2, 2].map(x =&gt; s.add(x));</div><div class="line"></div><div class="line">console.log(s);</div><div class="line">// 2 3 5 4</div></pre></td></tr></table></figure>
+<p>在Set内部，两个NaN是相等。两个对象总是不相等的。可以用length来检测</p>
+<p>四个操作方法：</p>
+<ol>
+<li>add(value)：添加某个值，返回Set结构本身。</li>
+<li>delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。</li>
+<li>has(value)：返回一个布尔值，表示该值是否为Set的成员。</li>
+<li>clear()：清除所有成员，没有返回值</li>
+</ol>
+<p>set内部的元素可以遍历for…of…</p>
+<ul>
+<li>WeakSet结构与Set类似，也是不重复的值的集合。</li>
+</ul>
+<p>WeakSet和Set的区别：</p>
+<p>WeakSet的成员只能是对象，而不能是其他类型的值<br>WeakSet中的对象都是弱引用，即垃圾回收机制不考虑WeakSet对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存，不考虑该对象还存在于WeakSet之中。这个特点意味着，无法引用WeakSet的成员，因此WeakSet是不可遍历的。</p>
+<h4 id="2、Map"><a href="#2、Map" class="headerlink" title="2、Map"></a>2、Map</h4><p>Map结构提供了“值—值”的对应，是一种更完善的Hash结构实现。如果你需要“键值对”的数据结构，Map比Object更合适。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var m = new Map();</div><div class="line">var o = &#123;p: &quot;Hello World&quot;&#125;;</div><div class="line"></div><div class="line">m.set(o, &quot;content&quot;)</div><div class="line">m.get(o) // &quot;content&quot;</div><div class="line"></div><div class="line">m.has(o) // true</div><div class="line">m.delete(o) // true</div><div class="line">m.has(o) // false</div></pre></td></tr></table></figure>
+<p>注意，只有对同一个对象的引用，Map结构才将其视为同一个键。这一点要非常小心。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var map = new Map();</div><div class="line"></div><div class="line">map.set([&apos;a&apos;], 555);</div><div class="line">map.get([&apos;a&apos;]) // undefined</div></pre></td></tr></table></figure>
+<p>上面代码的set和get方法，表面是针对同一个键，但实际上这是两个值，内存地址是不一样的，因此get方法无法读取该键，返回undefined。</p>
+<p>如果Map的键是一个简单类型的值（数字、字符串、布尔值），则只要两个值严格相等，Map将其视为一个键，包括0和-0。另外，虽然NaN不严格相等于自身，但Map将其视为同一个键。</p>
+<p>实例属性和方法：size、set、get、has、delete、clear</p>
+<p>遍历方法：keys（）、values（）、entries（）、forEach（）</p>
+<hr>
+<p><em>author: zhanggz</em></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+          
+            <a href="/tags/web开发/" rel="tag"># web开发</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/19/comet-websocket/" rel="next" title="comet和websocket">
+                <i class="fa fa-chevron-left"></i> comet和websocket
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Jing" />
+          <p class="site-author-name" itemprop="name">Jing</p>
+           
+              <p class="site-description motion-element" itemprop="description">不忘初心，方得始终。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、创建-Array-对象的语法"><span class="nav-number">1.</span> <span class="nav-text">一、创建 Array 对象的语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Array-对象属性"><span class="nav-number">2.</span> <span class="nav-text">二、Array 对象属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、Array的方法"><span class="nav-number">3.</span> <span class="nav-text">三、Array的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、Array的方法详情"><span class="nav-number">4.</span> <span class="nav-text">四、Array的方法详情</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、Array的基本方法"><span class="nav-number">4.1.</span> <span class="nav-text">一、Array的基本方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、数组的sort排序"><span class="nav-number">4.1.1.</span> <span class="nav-text">1、数组的sort排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、数组的toSource-方法"><span class="nav-number">4.1.2.</span> <span class="nav-text">2、数组的toSource()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、toString-、toLocaleString"><span class="nav-number">4.1.3.</span> <span class="nav-text">3、toString()、toLocaleString()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、splice"><span class="nav-number">4.1.4.</span> <span class="nav-text">4、splice()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5、Array-isArray"><span class="nav-number">4.1.5.</span> <span class="nav-text">5、Array.isArray()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、Es5中Array的扩展方法"><span class="nav-number">4.2.</span> <span class="nav-text">二、Es5中Array的扩展方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、arr-indexOf-searchElement-fromIndex"><span class="nav-number">4.2.1.</span> <span class="nav-text">1、arr.indexOf(searchElement[, fromIndex])</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、arr-lastIndexOf-searchElement-fromIndex"><span class="nav-number">4.2.2.</span> <span class="nav-text">2、arr.lastIndexOf(searchElement[, fromIndex])</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、arr-every-callback-thisObject"><span class="nav-number">4.2.3.</span> <span class="nav-text">3、arr.every(callback[, thisObject])</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、arr-filter-callback-thisObject"><span class="nav-number">4.2.4.</span> <span class="nav-text">4、arr.filter(callback[, thisObject])</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5、arr-map-callback-thisObject"><span class="nav-number">4.2.5.</span> <span class="nav-text">5、arr.map(callback[, thisObject])</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6、arr-forEach-callback-thisObject"><span class="nav-number">4.2.6.</span> <span class="nav-text">6、arr.forEach(callback[, thisObject])</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7、arr-some-callback-thisObject"><span class="nav-number">4.2.7.</span> <span class="nav-text">7、arr.some(callback[, thisObject])</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8、arr-reduce-callback-initialValue"><span class="nav-number">4.2.8.</span> <span class="nav-text">8、arr.reduce(callback[, initialValue])</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8、arr-reduceRight-callback-initialValue"><span class="nav-number">4.2.9.</span> <span class="nav-text">8、arr.reduceRight(callback[, initialValue])</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、Array不常见方法"><span class="nav-number">4.3.</span> <span class="nav-text">三、Array不常见方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、Array-from（arrayLike-，mapFn-，thisArg-）"><span class="nav-number">4.3.1.</span> <span class="nav-text">1、Array.from（arrayLike [，mapFn [，thisArg]]）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、Array-of-element0-element1-…-elementN"><span class="nav-number">4.3.2.</span> <span class="nav-text">2、Array.of(element0[, element1[, …[, elementN]]])</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、Array-copyWithin-target-start-end"><span class="nav-number">4.3.3.</span> <span class="nav-text">3、Array.copyWithin(target, start, end)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、Array-entries"><span class="nav-number">4.3.4.</span> <span class="nav-text">4、Array. entries()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5、Array-fill-value-start-end"><span class="nav-number">4.3.5.</span> <span class="nav-text">5、Array. fill(value, start, end)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6、Array-find"><span class="nav-number">4.3.6.</span> <span class="nav-text">6、Array.find()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7、Array-findIndex"><span class="nav-number">4.3.7.</span> <span class="nav-text">7、Array.findIndex()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8、Array-includes-searchElement-fromIndex"><span class="nav-number">4.3.8.</span> <span class="nav-text">8、Array.includes(searchElement, fromIndex)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9、Array-keys"><span class="nav-number">4.3.9.</span> <span class="nav-text">9、Array.keys()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10、Array-values"><span class="nav-number">4.3.10.</span> <span class="nav-text">10、Array.values()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、LT-Array"><span class="nav-number">5.</span> <span class="nav-text">五、LT.Array</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、LT-Array-remove-）"><span class="nav-number">5.1.</span> <span class="nav-text">1、LT.Array.remove(）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、LT-Array-removeAt-）"><span class="nav-number">5.2.</span> <span class="nav-text">2、LT.Array.removeAt(）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、LT-Array-remove-）"><span class="nav-number">5.3.</span> <span class="nav-text">3、LT.Array.remove(）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、LT-Array-empty-）"><span class="nav-number">5.4.</span> <span class="nav-text">4、LT.Array.empty(）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、LT-Array-unique-）"><span class="nav-number">5.5.</span> <span class="nav-text">5、LT.Array.unique(）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、forEach方法的区别"><span class="nav-number">6.</span> <span class="nav-text">六、forEach方法的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、扩展模拟Array对象"><span class="nav-number">7.</span> <span class="nav-text">七、扩展模拟Array对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6入门之set和map"><span class="nav-number">8.</span> <span class="nav-text">ES6入门之set和map</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、Set"><span class="nav-number">8.1.</span> <span class="nav-text">1、Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、Map"><span class="nav-number">8.2.</span> <span class="nav-text">2、Map</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jing</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
