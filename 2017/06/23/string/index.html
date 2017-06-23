@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="给你一个字符串，你有多少种方法蹂躏她？ var myString = &amp;apos;Emmie Huang is a beauty&amp;apos;; myString.length   // 23">
+<meta name="description" content="给你一个字符串，你有多少种方法蹂躏她？12var myString = &amp;apos;Emmie Huang is a beauty&amp;apos;;myString.length   // 23">
 <meta name="keywords" content="Javascript,web开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="String 常用方法总结">
 <meta property="og:url" content="https://github.com/jing0816/jing0816.github.io.git/2017/06/23/string/index.html">
 <meta property="og:site_name" content="前端日常">
-<meta property="og:description" content="给你一个字符串，你有多少种方法蹂躏她？ var myString = &amp;apos;Emmie Huang is a beauty&amp;apos;; myString.length   // 23">
-<meta property="og:updated_time" content="2017-06-23T07:38:43.000Z">
+<meta property="og:description" content="给你一个字符串，你有多少种方法蹂躏她？12var myString = &amp;apos;Emmie Huang is a beauty&amp;apos;;myString.length   // 23">
+<meta property="og:updated_time" content="2017-06-23T08:22:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String 常用方法总结">
-<meta name="twitter:description" content="给你一个字符串，你有多少种方法蹂躏她？ var myString = &amp;apos;Emmie Huang is a beauty&amp;apos;; myString.length   // 23">
+<meta name="twitter:description" content="给你一个字符串，你有多少种方法蹂躏她？12var myString = &amp;apos;Emmie Huang is a beauty&amp;apos;;myString.length   // 23">
 
 
 
@@ -350,10 +350,8 @@
       
 
       
-        <p>给你一个字符串，你有多少种方法蹂躏她？</p>
-<pre><code>var myString = &apos;Emmie Huang is a beauty&apos;;
-myString.length   // 23
-</code></pre><a id="more"></a>
+        <p>给你一个字符串，你有多少种方法蹂躏她？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var myString = &apos;Emmie Huang is a beauty&apos;;</div><div class="line">myString.length   // 23</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h2 id="字符串操作方法"><a href="#字符串操作方法" class="headerlink" title="字符串操作方法"></a>字符串操作方法</h2><h3 id="String-prototype-slice"><a href="#String-prototype-slice" class="headerlink" title="String.prototype.slice()"></a>String.prototype.slice()</h3><p><code>slice()</code>方法提取一个字符串的一部分，并返回一个新的字符串，<strong>slice 不修改原字符串</strong></p>
 <blockquote>
 <p>语法：str.slice(beginSlice[, endSlice])</p>
@@ -361,8 +359,7 @@ myString.length   // 23
 <ul>
 <li>beginSlice：从该索引（以 0 为基数）处开始提取原字符串中的字符。</li>
 <li>endSlice：可选。在该索引（以 0 为基数）处结束提取字符串。如果省略该参数，slice会一直提取到字符串末尾。</li>
-<li><p>如果值为负数，会被当做 sourceLength + beginSlice(endSlice) 看待，这里的sourceLength 是字符串的长度 (例如， 如果beginSlice(endSlice) 是 -3 则看作是: sourceLength - 3)</p>
-<p>  myString.slice(-10, -2) // s a beau<br>  myString.slice(-10) // s a beauty</p>
+<li>如果值为负数，会被当做 sourceLength + beginSlice(endSlice) 看待，这里的sourceLength 是字符串的长度 (例如， 如果beginSlice(endSlice) 是 -3 则看作是: sourceLength - 3)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myString.slice(-10, -2) // s a beau</div><div class="line">myString.slice(-10) // s a beauty</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="String-prototype-substring"><a href="#String-prototype-substring" class="headerlink" title="String.prototype.substring()"></a>String.prototype.substring()</h3><p>参数用法都和slice一样</p>
@@ -372,24 +369,14 @@ myString.length   // 23
 <p><strong>substring()和slice()的区别</strong></p>
 <ul>
 <li>substring:<ul>
-<li><ol>
 <li>start &gt; stop，substring将会把二者互换</li>
-</ol>
-</li>
-<li>2.如果任一参数小于 0 或为 NaN，则被当作 0。</li>
+<li>如果任一参数小于 0 或为 NaN，则被当作 0。</li>
 </ul>
 </li>
-<li><p>slice:</p>
-<ul>
-<li><ol>
+<li>slice:<ul>
 <li>start &gt; stop，slice将不会互换二者，返回空字符串</li>
-</ol>
+<li>如果任一参数小于 0 ，则会应用sourceLength + beginSlice(endSlice)算法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myString.slice(5,2)   // &quot;&quot;</div><div class="line">myString.substring(5,2)   // &quot;mie&quot;</div><div class="line">myString.substring(2,5)   // &quot;mie&quot;</div></pre></td></tr></table></figure>
 </li>
-<li><p>2.如果任一参数小于 0 ，则会应用sourceLength + beginSlice(endSlice)算法</p>
-<pre><code>myString.slice(5,2)   // &quot;&quot;
-myString.substring(5,2)   // &quot;mie&quot;
-myString.substring(2,5)   // &quot;mie&quot;
-</code></pre></li>
 </ul>
 </li>
 </ul>
@@ -399,15 +386,13 @@ myString.substring(2,5)   // &quot;mie&quot;
 </blockquote>
 <ul>
 <li>start：开始提取字符的位置。如果为负值，则被看作 strLength + start，其中 strLength 为字符串的长度（例如，如果 start 为 -3，则被看作 strLength-3）。</li>
-<li><p>length：可选。提取的字符数。<strong>如果忽略 length，则 substr 提取字符，直到字符串末尾，为负数的话，会被转换成0</strong></p>
-<p>  myString.substr(2,5)  // “mie H”<br>  myString.substr(2)    // “mie Huang is a beauty”</p>
+<li>length：可选。提取的字符数。<strong>如果忽略 length，则 substr 提取字符，直到字符串末尾，为负数的话，会被转换成0</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myString.substr(2,5)  // &quot;mie H&quot;</div><div class="line">myString.substr(2)    // &quot;mie Huang is a beauty&quot;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="String-prototype-concat"><a href="#String-prototype-concat" class="headerlink" title="String.prototype.concat()"></a>String.prototype.concat()</h3><p><code>concat()</code> 方法将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。</p>
 <ul>
 <li>此方法不改变原字符串</li>
-<li><p>强烈建议使用 赋值操作符（+, +=）代替 concat 方法</p>
-<p>  myString.concat(“. are you kidding me?”, ‘ hehe’);<br>  // ‘Emmie Huang is a beauty, are you kidding me? hehe’</p>
+<li>强烈建议使用 赋值操作符（+, +=）代替 concat 方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myString.concat(&quot;. are you kidding me?&quot;, &apos; hehe&apos;);</div><div class="line">// &apos;Emmie Huang is a beauty, are you kidding me? hehe&apos;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="字符串位置方法"><a href="#字符串位置方法" class="headerlink" title="字符串位置方法"></a>字符串位置方法</h2><h3 id="String-prototype-indexOf"><a href="#String-prototype-indexOf" class="headerlink" title="String.prototype.indexOf()"></a>String.prototype.indexOf()</h3><p><code>indexOf()</code> 方法返回调用  String 对象中第一次出现的指定值的索引，开始在 <code>fromIndex</code>进行搜索。<strong>如果未找到该值，则返回-1</strong>。</p>
@@ -417,8 +402,7 @@ myString.substring(2,5)   // &quot;mie&quot;
 <ul>
 <li>如果 <code>fromIndex &lt; 0</code>则查找整个字符串（如同传进了 0）</li>
 <li>如果 <code>fromIndex &gt;= str.length</code>，则该方法返回 -1，除非被查找的字符串是一个空字符串，此时返回 <code>str.length</code>。</li>
-<li><p>indexOf 方法区分大小写</p>
-<p>  myString.indexOf(‘e’)   // 4<br>  myString.indexOf(‘j’)   // -1<br>  myString.indexOf(‘e’, 200)  // -1<br>  myString.indexOf(‘’, 200) // 23<br>  myString.indexOf(‘’, 22)  // 22<br>  myString.indexOf(‘emmie’) // -1</p>
+<li>indexOf 方法区分大小写<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">myString.indexOf(&apos;e&apos;)   // 4</div><div class="line">myString.indexOf(&apos;j&apos;)   // -1</div><div class="line">myString.indexOf(&apos;e&apos;, 200)  // -1</div><div class="line">myString.indexOf(&apos;&apos;, 200) // 23</div><div class="line">myString.indexOf(&apos;&apos;, 22)  // 22</div><div class="line">myString.indexOf(&apos;emmie&apos;) // -1</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="String-prototype-lastIndexOf"><a href="#String-prototype-lastIndexOf" class="headerlink" title="String.prototype.lastIndexOf()"></a>String.prototype.lastIndexOf()</h3><p><code>lastIndexOf()</code>方法返回指定值在调用该方法的字符串中最后出现的位置，如果没找到则返回 -1。<strong>从该字符串的后面向前查找</strong>，从 <code>fromIndex</code> 处开始。</p>
@@ -427,59 +411,53 @@ myString.substring(2,5)   // &quot;mie&quot;
 </blockquote>
 <ul>
 <li>第二个参数： 默认值为 <code>str.length</code>。如果为负值，则被看作 0。如果 <code>fromIndex &gt; str.length</code>，则 fromIndex 被看作 <code>str.length</code>。</li>
-<li><p>lastIndexOf 方法区分大小写</p>
-<p>  myString.lastIndexOf(‘ie’, 10)  // 3<br>  myString.lastIndexOf(‘ie’, 2) // -1<br>  myString.lastIndexOf(‘E’, -1) // 0<br>  myString.lastIndexOf(‘m’, 100)  // 2</p>
+<li>lastIndexOf 方法区分大小写<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">myString.lastIndexOf(&apos;ie&apos;, 10)  // 3</div><div class="line">myString.lastIndexOf(&apos;ie&apos;, 2) // -1</div><div class="line">myString.lastIndexOf(&apos;E&apos;, -1) // 0</div><div class="line">myString.lastIndexOf(&apos;m&apos;, 100)  // 2</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="字符串转换方法"><a href="#字符串转换方法" class="headerlink" title="字符串转换方法"></a>字符串转换方法</h2><h3 id="String-prototype-toLocaleLowerCase-amp-amp-String-prototype-toLowerCase"><a href="#String-prototype-toLocaleLowerCase-amp-amp-String-prototype-toLowerCase" class="headerlink" title="String.prototype.toLocaleLowerCase() &amp;&amp; String.prototype.toLowerCase()"></a>String.prototype.toLocaleLowerCase() &amp;&amp; String.prototype.toLowerCase()</h3><p>将调用该方法的字符串值转为小写形式，并返回</p>
 <ul>
-<li><p>在大多数情况下，<strong>调用<code>toLocaleLowerCase()</code>和<code>toLowerCase()</code>的结果相同</strong>，但是在<strong>某些本地环境</strong>中，比如土耳其语，它的大小写映射并不遵循在Unicode中的默认的大小写映射，因此会有一个不同的结果。</p>
-<p>  myString.toLowerCase()      // ‘emmie huang is a beauty’<br>  myString.toLocaleLowerCase()  // ‘emmie huang is a beauty’</p>
+<li>在大多数情况下，<strong>调用<code>toLocaleLowerCase()</code>和<code>toLowerCase()</code>的结果相同</strong>，但是在<strong>某些本地环境</strong>中，比如土耳其语，它的大小写映射并不遵循在Unicode中的默认的大小写映射，因此会有一个不同的结果。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myString.toLowerCase()      // &apos;emmie huang is a beauty&apos;</div><div class="line">myString.toLocaleLowerCase()  // &apos;emmie huang is a beauty&apos;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="String-prototype-toLocaleUpperCase-amp-amp-String-prototype-toUpperCase"><a href="#String-prototype-toLocaleUpperCase-amp-amp-String-prototype-toUpperCase" class="headerlink" title="String.prototype.toLocaleUpperCase() &amp;&amp; String.prototype.toUpperCase()"></a>String.prototype.toLocaleUpperCase() &amp;&amp; String.prototype.toUpperCase()</h3><p>将调用该方法的字符串值转换为大写形式，并返回</p>
 <ul>
-<li><p>大多数情况下，<code>toLocaleLowerCase()</code>与 <code>toUpperCase()</code> 会产生相同的值，但是对于一些语言（locale）,例如土耳其语，因为它们的<strong>大小写映射规则与Unicode默认的映射规则不同</strong>，所以调用这两个方法将会产生不同的结果。</p>
-<p>  myString.toUpperCase()  // ‘EMMIE HUANG IS A BEAUTY’<br>  myString.toLocaleUpperCase()  // ‘EMMIE HUANG IS A BEAUTY’</p>
+<li>大多数情况下，<code>toLocaleLowerCase()</code>与 <code>toUpperCase()</code> 会产生相同的值，但是对于一些语言（locale）,例如土耳其语，因为它们的<strong>大小写映射规则与Unicode默认的映射规则不同</strong>，所以调用这两个方法将会产生不同的结果。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myString.toUpperCase()  // &apos;EMMIE HUANG IS A BEAUTY&apos;</div><div class="line">myString.toLocaleUpperCase()  // &apos;EMMIE HUANG IS A BEAUTY&apos;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="字符串字符方法"><a href="#字符串字符方法" class="headerlink" title="字符串字符方法"></a>字符串字符方法</h2><h3 id="String-prototype-charAt"><a href="#String-prototype-charAt" class="headerlink" title="String.prototype.charAt()"></a>String.prototype.charAt()</h3><p><code>charAt()</code> 方法返回特定位置的字符。</p>
 <ul>
 <li>如果指定的 index 值超出了该范围，则返回一个空字符串</li>
-<li><p>如果没有提供索引，charAt() 将使用0。</p>
-<p>  myString.charAt(6)   // ‘H’<br>  myString.charAt(30)   // ‘’<br>  myString.charAt()   // ‘E’</p>
+<li>如果没有提供索引，charAt() 将使用0。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myString.charAt(6)   // &apos;H&apos;</div><div class="line">myString.charAt(30)   // &apos;&apos;</div><div class="line">myString.charAt()   // &apos;E&apos;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="String-prototype-charCodeAt"><a href="#String-prototype-charCodeAt" class="headerlink" title="String.prototype.charCodeAt()"></a>String.prototype.charCodeAt()</h3><p><code>charCodeAt()</code> 方法返回0到65535之间的整数，表示给定索引处的UTF-16代码单元</p>
 <ul>
-<li><p>如果指定的 index 小于 0 或不小于字符串的长度，则 charCodeAt 返回 NaN</p>
-<p>  myString.charCodeAt(0)    // 69<br>  myString.charCodeAt(456)  // NaN<br>  myString.charCodeAt(-1)   // NaN</p>
-</li>
+<li>如果指定的 index 小于 0 或不小于字符串的长度，则 charCodeAt 返回 NaN</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myString.charCodeAt(0)    // 69</div><div class="line">myString.charCodeAt(456)  // NaN</div><div class="line">myString.charCodeAt(-1)   // NaN</div></pre></td></tr></table></figure>
 <h3 id="String-prototype-codePointAt"><a href="#String-prototype-codePointAt" class="headerlink" title="String.prototype.codePointAt()"></a>String.prototype.codePointAt()</h3><p><code>codePointAt()</code> 方法返回 一个 Unicode 编码点值的非负整数。</p>
 <ul>
-<li><p>如果在指定的位置没有元素则返回 undefined 。如果在索引处开始没有UTF-16 代理对，将直接返回在那个索引处的编码单元。</p>
-<blockquote>
+<li>如果在指定的位置没有元素则返回 undefined 。如果在索引处开始没有UTF-16 代理对，将直接返回在那个索引处的编码单元。<blockquote>
 <p><code>ES6</code>提供了<code>codePointAt</code>方法，能够正确处理4个字节储存的字符，返回一个字符的码点。对于那些两个字节储存的常规字符，它的返回结果与charCodeAt方法相同</p>
 </blockquote>
-<p>  var s = ‘𠮷a’;<br>  s.codePointAt(0) // 134071<br>  s.codePointAt(1) // 57271<br>  s.codePointAt(2) // 97<br><em>这几个方法都涉及到Unicode编码问题，推荐两篇文章吧：<br><a href="http://www.alloyteam.com/2016/12/javascript-has-a-" target="_blank" rel="external">http://www.alloyteam.com/2016/12/javascript-has-a-</a><br>unicode-sinkhole/<br><br><a href="http://es6.ruanyifeng.com/#docs/string#codePointAt" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/string#codePointAt</a><br><br>我就不详述了</em></p>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var s = &apos;𠮷a&apos;;</div><div class="line">s.codePointAt(0) // 134071</div><div class="line">s.codePointAt(1) // 57271 </div><div class="line">s.codePointAt(2) // 97</div></pre></td></tr></table></figure>
+<p><em>这几个方法都涉及到Unicode编码问题，推荐两篇文章吧：<br><a href="http://www.alloyteam.com/2016/12/javascript-has-a-unicode-sinkhole/" target="_blank" rel="external">Javascript有个Unicode的天坑</a><br><a href="http://es6.ruanyifeng.com/#docs/string#codePointAt" target="_blank" rel="external">ECMAScript 6 入门</a><br>我就不详述了</em></p>
 <h2 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h2><h3 id="String-prototype-split"><a href="#String-prototype-split" class="headerlink" title="String.prototype.split()"></a>String.prototype.split()</h3><p><code>split()</code> 方法将一个String对象分割成字符串数组，通过将字符串分成子串。   </p>
 <blockquote>
 <p>语法:str.split([separator[, limit]])</p>
 </blockquote>
 <ul>
 <li>separator：指定用来分割字符串的字符（串）。separator 可以是一个<strong>字符串或正则表达式</strong>。 如果忽略 separator，则返回整个字符串的数组形式。如果 separator 是一个空字符串，则 str 将会把原字符串中每个字符的数组形式返回。</li>
-<li><p>limit：一个整数，限定返回的分割片段数量。split 方法仍然分割每一个匹配的 separator，<strong>但是返回的数组只会截取最多 limit 个元素</strong>。</p>
-<p>  myString.split(‘’)    // [“E”, “m”, “m”, “i”, “e”, “ “, “H”, “u”, “a”, “n”, “g”, “ “, “i”, “s”, “ “, “a”, “ “, “b”, “e”, “a”, “u”, “t”, “y”]<br>  myString.split(‘ ‘)   // [“Emmie”, “Huang”, “is”, “a”, “beauty”]<br>  myString.split(‘ ‘,3) //  [“Emmie”, “Huang”, “is”]<br>  myString.split()    // [“Emmie Huang is a beauty”]<br>  ‘’.split()        // [“”]<br><em>注意： 当字符串为空时，split 返回一个包含一个空字符串的数组，而不是一个空数组。</em></p>
+<li>limit：一个整数，限定返回的分割片段数量。split 方法仍然分割每一个匹配的 separator，<strong>但是返回的数组只会截取最多 limit 个元素</strong>。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">myString.split(&apos;&apos;)    // [&quot;E&quot;, &quot;m&quot;, &quot;m&quot;, &quot;i&quot;, &quot;e&quot;, &quot; &quot;, &quot;H&quot;, &quot;u&quot;, &quot;a&quot;, &quot;n&quot;, &quot;g&quot;, &quot; &quot;, &quot;i&quot;, &quot;s&quot;, &quot; &quot;, &quot;a&quot;, &quot; &quot;, &quot;b&quot;, &quot;e&quot;, &quot;a&quot;, &quot;u&quot;, &quot;t&quot;, &quot;y&quot;]</div><div class="line">myString.split(&apos; &apos;)   // [&quot;Emmie&quot;, &quot;Huang&quot;, &quot;is&quot;, &quot;a&quot;, &quot;beauty&quot;]</div><div class="line">myString.split(&apos; &apos;,3) //  [&quot;Emmie&quot;, &quot;Huang&quot;, &quot;is&quot;]</div><div class="line">myString.split()    // [&quot;Emmie Huang is a beauty&quot;]</div><div class="line">&apos;&apos;.split()        // [&quot;&quot;]</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<p><em>注意： 当字符串为空时，split 返回一个包含一个空字符串的数组，而不是一个空数组。</em></p>
 <h3 id="String-prototype-includes"><a href="#String-prototype-includes" class="headerlink" title="String.prototype.includes()"></a>String.prototype.includes()</h3><p><code>includes()</code>方法用于判断一个字符串是否包含在另一个字符串中，根据情况<strong>返回 true 或 false</strong>。<em>（es6方法哦）</em></p>
 <ul>
 <li>includes() 方法是区分大小写的</li>
-<li><p>第二个参数：从当前字符串的哪个<strong>索引位置</strong>开始搜寻子字符串；默认值为0</p>
-<p>  myString.includes(‘emmie’)    //false<br>  myString.includes(‘beauty’)   //true<br>  myString.includes(‘Emmie’, 1) //false</p>
+<li>第二个参数：从当前字符串的哪个<strong>索引位置</strong>开始搜寻子字符串；默认值为0<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myString.includes(&apos;emmie&apos;)    //false</div><div class="line">myString.includes(&apos;beauty&apos;)   //true</div><div class="line">myString.includes(&apos;Emmie&apos;, 1) //false</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="String-prototype-trim"><a href="#String-prototype-trim" class="headerlink" title="String.prototype.trim()"></a>String.prototype.trim()</h3><p><code>trim()</code> 方法会从一个字符串的<strong>两端</strong>删除空白字符。在这个上下文中的空白字符是所有的空白字符 <strong>(space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR）</strong>。</p>
@@ -487,25 +465,23 @@ myString.substring(2,5)   // &quot;mie&quot;
 <p>语法：str.trim()</p>
 </blockquote>
 <ul>
-<li><p>trim() 方法并不影响原字符串本身，它返回的是一个新的字符串。</p>
-<p>  ‘ foo ‘.trim()  // ‘foo’    </p>
+<li>trim() 方法并不影响原字符串本身，它返回的是一个新的字符串。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&apos; foo &apos;.trim()  // &apos;foo&apos;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="String-prototype-startsWith"><a href="#String-prototype-startsWith" class="headerlink" title="String.prototype.startsWith()"></a>String.prototype.startsWith()</h3><p><code>startsWith()</code>方法用来判断当前字符串是否是以另外一个给定的子字符串“开头”的，根据判断结果<strong>返回 true 或 false</strong>。<em>（es6方法哦）</em></p>
 <blockquote>
 <p>语法：str.startsWith(searchString [, position]);</p>
 <ul>
-<li>第二个参数：在 str 中搜索 目标字符串 的开始位置，默认值为 0，也就是真正的字符串开头处。</li>
+<li>第二个参数：在 str 中搜索 目标字符串 的开始位置，默认值为 0，也就是真正的字符串开头处。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myString.startsWith(&apos;i&apos;,3)  // true</div></pre></td></tr></table></figure>
+</li>
 </ul>
 </blockquote>
-<pre><code>myString.startsWith(&apos;i&apos;,3)  // true
-</code></pre><h3 id="String-prototype-endsWith"><a href="#String-prototype-endsWith" class="headerlink" title="String.prototype.endsWith()"></a>String.prototype.endsWith()</h3><p><code>endsWith()</code>方法用来判断当前字符串是否是以另外一个给定的子字符串“结尾”的，根据判断结果 <strong>返回 true 或 false</strong>。<em>（es6方法哦）</em></p>
+<h3 id="String-prototype-endsWith"><a href="#String-prototype-endsWith" class="headerlink" title="String.prototype.endsWith()"></a>String.prototype.endsWith()</h3><p><code>endsWith()</code>方法用来判断当前字符串是否是以另外一个给定的子字符串“结尾”的，根据判断结果 <strong>返回 true 或 false</strong>。<em>（es6方法哦）</em></p>
 <blockquote>
 <p>语法：str.endsWith(searchString [, position]);</p>
 </blockquote>
 <ul>
-<li><p>第二个参数：在 str 中搜索 目标字符串 的结束位置，默认值为 str.length，也就是<strong>真正的字符串结尾处</strong></p>
-<p>  myString.endsWith(‘e’, 4) // false<br>  myString.endsWith(‘i’, 4) // true</p>
+<li>第二个参数：在 str 中搜索 目标字符串 的结束位置，默认值为 str.length，也就是<strong>真正的字符串结尾处</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myString.endsWith(&apos;e&apos;, 4) // false</div><div class="line">myString.endsWith(&apos;i&apos;, 4) // true</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
