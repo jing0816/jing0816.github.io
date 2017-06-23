@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="之前我们介绍了“服务器推”技术comet，接下来我们介绍一下另一种技术websocket。 ##什么是websocket ##comet和websocket的区别对于comet长连接来说，服务端如有内容需要发送给客户端时，服务端将原本占用的连接进行回复，此时原有的连接断开，重新发起长连接，直到服务端有内容响应。从每次消息发送到收到服务端消息应答，平均需要两次HTTP请求，一次请求将消息内容提交到服">
+<meta name="description" content="之前我们介绍了“服务器推”技术comet，接下来我们介绍一下另一种技术websocket。">
 <meta name="keywords" content="Javascript,web开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="comet和websocket">
 <meta property="og:url" content="https://github.com/jing0816/jing0816.github.io.git/2017/06/19/comet-websocket/index.html">
 <meta property="og:site_name" content="前端日常">
-<meta property="og:description" content="之前我们介绍了“服务器推”技术comet，接下来我们介绍一下另一种技术websocket。 ##什么是websocket ##comet和websocket的区别对于comet长连接来说，服务端如有内容需要发送给客户端时，服务端将原本占用的连接进行回复，此时原有的连接断开，重新发起长连接，直到服务端有内容响应。从每次消息发送到收到服务端消息应答，平均需要两次HTTP请求，一次请求将消息内容提交到服">
-<meta property="og:updated_time" content="2017-06-20T02:21:55.000Z">
+<meta property="og:description" content="之前我们介绍了“服务器推”技术comet，接下来我们介绍一下另一种技术websocket。">
+<meta property="og:updated_time" content="2017-06-23T07:38:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="comet和websocket">
-<meta name="twitter:description" content="之前我们介绍了“服务器推”技术comet，接下来我们介绍一下另一种技术websocket。 ##什么是websocket ##comet和websocket的区别对于comet长连接来说，服务端如有内容需要发送给客户端时，服务端将原本占用的连接进行回复，此时原有的连接断开，重新发起长连接，直到服务端有内容响应。从每次消息发送到收到服务端消息应答，平均需要两次HTTP请求，一次请求将消息内容提交到服">
+<meta name="twitter:description" content="之前我们介绍了“服务器推”技术comet，接下来我们介绍一下另一种技术websocket。">
 
 
 
@@ -350,7 +350,7 @@
       
 
       
-        <p>之前我们介绍了“服务器推”技术comet，接下来我们介绍一下另一种技术websocket。</p>
+        <p>之前我们介绍了“服务器推”技术comet，接下来我们介绍一下另一种技术websocket。<br><a id="more"></a></p>
 <p>##什么是websocket</p>
 <p>##comet和websocket的区别<br>对于comet长连接来说，服务端如有内容需要发送给客户端时，服务端将原本占用的连接进行回复，此时原有的连接断开，重新发起长连接，直到服务端有内容响应。从每次消息发送到收到服务端消息应答，平均需要两次HTTP请求，一次请求将消息内容提交到服务端，另外还需保持一个长连接，当服务端有内容响应时，及时发回响应。</p>
 <p>对于websocket来说，情况就不太一样了，websocket的浏览器端会先发送一个HTTP请求给服务端建立连接，服务端会回一个HTTP的响应，当连接建立好之后，浏览器端与服务端将通过frame的格式通信，中间附带的header信息几乎可忽略不计。</p>
