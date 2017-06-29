@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://chuantu.biz/t5/120/1498722260x2084677658.png">
 <meta property="og:image" content="http://chuantu.biz/t5/120/1498722132x2084677658.png">
 <meta property="og:image" content="http://chuantu.biz/t5/120/1498721983x2084677658.png">
-<meta property="og:updated_time" content="2017-06-29T10:40:19.000Z">
+<meta property="og:updated_time" content="2017-06-29T11:45:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域-AJAX">
 <meta name="twitter:description" content="一、AJAX 跨域 背景：在JavaScript中，有一个很重要的安全性限制，被称为“Same-Origin Policy”（同源策略）。这一策略对于JavaScript代码能够访问的页面内容做了很重要的限制，即JavaScript只能访问与包含它的文档在同一域下的内容。">
@@ -698,7 +698,7 @@
 <h3 id="四、LT-ajax、jsonp、ajaxfileupload对比"><a href="#四、LT-ajax、jsonp、ajaxfileupload对比" class="headerlink" title="四、LT.ajax、jsonp、ajaxfileupload对比"></a>四、LT.ajax、jsonp、ajaxfileupload对比</h3><h4 id="一、ajaxfileupload的原理"><a href="#一、ajaxfileupload的原理" class="headerlink" title="一、ajaxfileupload的原理"></a>一、ajaxfileupload的原理</h4><ol>
 <li>先创建一个表单，上传图片的表单<br><img src="http://chuantu.biz/t5/120/1498714064x2084677658.png" alt="avatar"></li>
 <li>再创建一个iframe<br><img src="http://chuantu.biz/t5/120/1498722260x2084677658.png" alt="avatar"></li>
-<li><p>将表单的action设置为图片上传的地址，target设置为新建的iframe的id，即在指定的框架中打开。<br><img src="http://chuantu.biz/t5/120/1498722132x2084677658.png" alt="avatar"></p>
+<li><p>将表单的action设置为图片上传的地址，target设置为新建的iframe的id，即将提交返回的数据返回到iframe中。<br><img src="http://chuantu.biz/t5/120/1498722132x2084677658.png" alt="avatar"></p>
 <p><img src="http://chuantu.biz/t5/120/1498721983x2084677658.png" alt="avatar"></p>
 </li>
 </ol>
@@ -708,7 +708,7 @@
 </li>
 <li>jsonp：跨域<br>通过创建一个script标签，改变script标签的src，通过注册的callback返回参数实现（src是可以跨域的）</li>
 <li><p>ajaxfileupload：</p>
-<p>是一个form提交，创建一个iframe,将要提交的表单拷贝一份放在iframe。</p>
+<p>是一个form提交，创建一个iframe,即将提交返回的数据返回到iframe中。</p>
 <blockquote>
 <p>参考文档：</p>
 <p><a href="http://www.cnblogs.com/nanpingwanzhong/archive/2012/12/22/2828885.html" target="_blank" rel="external">html5 XHR2 and CORS</a></p>
